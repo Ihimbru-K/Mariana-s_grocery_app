@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:grocery_app/on_boarding/02_onboarding_2.dart';
 
@@ -16,20 +18,22 @@ class _OnBoarding1State extends State<OnBoarding1> {
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: lightYellow,
+
       appBar: AppBar(
-        backgroundColor: lightYellow,
+        backgroundColor: Colors.transparent,
         leading: const Icon(
           Icons.arrow_back,
           color: lightYellow,
         ),
+        elevation: 0,
       ),
       body: Container(
+        padding: EdgeInsets.only(left: screenWidth*0.0, top: screenHeight*0.05, bottom: screenWidth*0.0),
         child: Column(
           children: [
-            Image.asset("assets/images/onboarding1.png"),
+            Image.asset("assets/images/onboarding1.png", height: 175,),
             SizedBox(
-              height: screenHeight * 0.09,
+              height: screenHeight * 0.07,
             ),
             const Center(
               child: Text(
@@ -40,17 +44,18 @@ class _OnBoarding1State extends State<OnBoarding1> {
                 ),
               ),
             ),
-            SizedBox(height: screenHeight*0.05,),
+            SizedBox(height: screenHeight*0.03,),
             const Center(child: Text("Grocery application", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),),
-            SizedBox(height: screenHeight*0.05,),
-            const Center(child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ", style: TextStyle(color: dgrey),),),
-            SizedBox(height: screenHeight*0.08,),
-            Image.asset("assets/images/indicator.png"),
-            SizedBox(height: screenHeight*0.09,),
+            SizedBox(height: screenHeight*0.03,),
+            const Center(child: Text("Lorem ipsum dolor sit amet, consectetur", style: TextStyle(color: dgrey),),),
+            const Center(child: Text("adipiscing elit, sed do eiusmod tempor", style: TextStyle(color: dgrey),),),
+            SizedBox(height: screenHeight*0.04,),
+            Image.asset("assets/images/indicator.png", height: 10, width: 90,),
+            SizedBox(height: screenHeight*0.06,),
             Container(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               width: screenWidth * 0.87,
-              height: screenWidth * 0.17,
+              height: screenWidth * 0.19,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -61,7 +66,7 @@ class _OnBoarding1State extends State<OnBoarding1> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: lightYellow,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
+                      borderRadius: BorderRadius.circular(30)),
                 ),
                 child: const Center(
                   child: Text(
