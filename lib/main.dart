@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
        // primarySwatch: Colors.orange,
       ),
 
-
-      home: const SignIn()
+home: OnBoarding1(),
+      //home: const SignIn()
     );
   }
 }

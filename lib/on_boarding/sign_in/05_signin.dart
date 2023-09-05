@@ -36,7 +36,7 @@ class _SignInState extends State<SignIn> {
           ),
           Center(
             child: Container(
-              height: screenHeight* 0.5,
+              height: screenHeight* 0.3,
               width: screenWidth* 0.8,
               decoration: BoxDecoration(
                 color: white,
