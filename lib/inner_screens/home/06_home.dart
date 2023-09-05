@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
           ],
       ),
       body: Container(
-
+        padding: EdgeInsets.only(left: screenWidth*0.042, right: screenWidth*0.042),
         child: Column(
         children: [
           SingleChildScrollView(
@@ -44,17 +44,17 @@ class _HomeState extends State<Home> {
               children: [
                 Container(
                   //padding: EdgeInsets.all(3),
-                  width: screenWidth * 0.3,
-                  height: screenHeight*0.15,
+                  width: screenWidth * 0.45,
+                  height: screenHeight*0.27,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: white,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: const Offset(0, 3),
+                          //spreadRadius: 2,
+                         // blurRadius: 5,
+                         // offset: const Offset(0, 3),
                         ),
                       ]),
                   child: Expanded(
@@ -64,9 +64,36 @@ class _HomeState extends State<Home> {
 
                   ),
                 ),
+                SizedBox(width: screenWidth*0.027,),
+                Container(
+                  //padding: EdgeInsets.all(3),
+                  width: screenWidth * 0.45,
+                  height: screenHeight*0.27,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          //spreadRadius: 2,
+                          // blurRadius: 5,
+                          // offset: const Offset(0, 3),
+                        ),
+                      ]),
+                  child: Expanded(
+
+                    child:  Image.asset("assets/images/reciperec.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+                  ),
+                ),
+
+
               ],
             ),
-          )
+          ),
+
+          
 
 
         ],
