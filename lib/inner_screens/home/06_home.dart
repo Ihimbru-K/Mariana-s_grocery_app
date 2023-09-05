@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
           ],
       ),
       body: Container(
-        padding: EdgeInsets.only(left: screenWidth*0.042, right: screenWidth*0.042),
+        padding: EdgeInsets.only(left: screenWidth*0.042),
         child: Column(
         children: [
           SingleChildScrollView(
@@ -92,8 +92,44 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
+          SizedBox(height:  screenHeight*0.05,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text("Categories", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),), Icon(Icons.arrow_forward, color: Colors.black,)
+            ],),
+          SizedBox(height:  screenHeight*0.07,),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+            children: [
+              Container(
+                //padding: EdgeInsets.all(3),
+                width: screenWidth * 0.2,
+                height: screenHeight*0.2,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        //spreadRadius: 2,
+                        // blurRadius: 5,
+                        // offset: const Offset(0, 3),
+                      ),
+                    ]),
+                child: Center(
 
-          
+                  child:  Image.asset("assets/images/reciperec.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+                ),
+              ),
+
+            ],
+          ),)
+
+
 
 
         ],
