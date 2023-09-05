@@ -36,7 +36,7 @@ class _SignInState extends State<SignIn> {
           ),
           Center(
             child: Container(
-              height: screenHeight* 0.2,
+              height: screenHeight* 0.5,
               width: screenWidth* 0.8,
               decoration: BoxDecoration(
                 color: white,
@@ -44,7 +44,7 @@ class _SignInState extends State<SignIn> {
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                //crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,25 +68,34 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                     ],),
+
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
+
                         hintText: 'Email',
-                        filled: true,
-                        fillColor: Colors.grey[200],
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                          borderSide: BorderSide(color: black),
+                        ),
                       ),
-                      controller: TextEditingController(text: 'kanihims@gmail.com'),
+                      controller: TextEditingController(text: 'rafatul3588@gmail.com'),
                     ),
                   ),
                   const SizedBox(height: 18.0),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextField(
+
                       decoration: InputDecoration(
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                          borderSide: BorderSide(color: black),
+                        ),
                         hintText: 'Password',
-                        filled: true,
-                        fillColor: Colors.grey[200],
+
+
                         suffixIcon: IconButton(
                           icon: Icon(_passwordVisible? Icons.visibility_off: Icons.visibility),
                           onPressed: _togglePasswordVisibility,
