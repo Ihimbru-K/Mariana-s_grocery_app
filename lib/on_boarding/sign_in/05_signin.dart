@@ -4,14 +4,14 @@ import 'package:grocery_app/inner_screens/home/06_home.dart';
 import '../../constants/colors.dart';
 
 
-class OnBoarding4 extends StatefulWidget {
-  const OnBoarding4({Key? key}) : super(key: key);
+class SignIn extends StatefulWidget {
+  const SignIn({Key? key}) : super(key: key);
 
   @override
-  State<OnBoarding4> createState() => _OnBoarding4State();
+  State<SignIn> createState() => _SignInState();
 }
 
-class _OnBoarding4State extends State<OnBoarding4> {
+class _SignInState extends State<SignIn> {
   bool _passwordVisible = false;
 
   void _togglePasswordVisibility(){
@@ -25,9 +25,7 @@ class _OnBoarding4State extends State<OnBoarding4> {
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.height;
     return  Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-      ),
+
       body: Stack(
         children: [
           Image.asset(
@@ -38,7 +36,7 @@ class _OnBoarding4State extends State<OnBoarding4> {
           ),
           Center(
             child: Container(
-              height: screenHeight* 0.5,
+              height: screenHeight* 0.2,
               width: screenWidth* 0.8,
               decoration: BoxDecoration(
                 color: white,
@@ -52,7 +50,7 @@ class _OnBoarding4State extends State<OnBoarding4> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
                       Padding(
-                        padding: EdgeInsets.all(16.0),
+                        padding: EdgeInsets.all(10.0),
                         child: Text(
                           'Sign in',
                           style: TextStyle(
@@ -64,14 +62,14 @@ class _OnBoarding4State extends State<OnBoarding4> {
                       Padding(
                         padding: EdgeInsets.all(16.0),
                         child: CircleAvatar(
-                          radius: 20,
+                          radius: 15,
                           backgroundColor: black,
-                          child: Icon(Icons.close, color: white),
+                          child: Icon(Icons.close, color: white, ),
                         ),
                       ),
                     ],),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 18.0),
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Email',
@@ -81,7 +79,7 @@ class _OnBoarding4State extends State<OnBoarding4> {
                       controller: TextEditingController(text: 'kanihims@gmail.com'),
                     ),
                   ),
-                  const SizedBox(height: 16.0),
+                  const SizedBox(height: 18.0),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextField(
@@ -101,10 +99,11 @@ class _OnBoarding4State extends State<OnBoarding4> {
                   Center(child: GestureDetector(onTap: (){},
                     child: const Text("Got Password?", style: TextStyle(color: lightYellow, fontSize: 16),),
                   ),),
+                  SizedBox(height: screenHeight*0.06,),
                   Container(
                     padding: const EdgeInsets.all(12),
                     width: screenWidth * 0.87,
-                    height: screenWidth * 0.17,
+                    height: screenWidth * 0.13,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
@@ -115,7 +114,7 @@ class _OnBoarding4State extends State<OnBoarding4> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: lightYellow,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(30)),
                       ),
                       child: const Center(
                         child: Text(
