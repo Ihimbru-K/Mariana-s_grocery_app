@@ -13,22 +13,63 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.height;
     const String name = "Rafatul Islam";
     return Scaffold(
+      backgroundColor: white,
       appBar: AppBar(
-
-        actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [ Column(children: const [
-            Text("Good morning", style: TextStyle(fontSize: 13, color: dgrey),), SizedBox(height: 3,), Text("$name", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+        elevation: 0,
+        backgroundColor: white,
+        leading: Row(
+          //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [ Column(children: const [ SizedBox(height: 5,),
+            Text("Good morning", style: TextStyle(fontSize: 13, color: dgrey),), SizedBox(height: 1,), Text("$name", style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),),
           ],),
-              Icon(Icons.notification_add_rounded)
-              
-        ],)],
+
+
+          ],),
+
+        actions: const [
+          Icon(Icons.notification_add_rounded, color: black,)
+          ],
       ),
-      body: Container(child: Column(
-        children: [Text("This is ")],
+      body: Container(
+
+        child: Column(
+        children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Container(
+                  //padding: EdgeInsets.all(3),
+                  width: screenWidth * 0.3,
+                  height: screenHeight*0.15,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: const Offset(0, 3),
+                        ),
+                      ]),
+                  child: Expanded(
+
+                     child:  Image.asset("assets/images/reciperec.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+                  ),
+                ),
+              ],
+            ),
+          )
+
+
+        ],
       ),),
     );
   }

@@ -3,6 +3,8 @@ import 'package:grocery_app/on_boarding/01_onboarding_0.dart';
 import 'package:grocery_app/on_boarding/01_onboarding_1.dart';
 import 'package:grocery_app/on_boarding/sign_in/05_signin.dart';
 
+import 'inner_screens/home/06_home.dart';
+
 void main() {
 
   runApp(const MyApp());
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
        // primarySwatch: Colors.orange,
       ),
 
-home: OnBoarding1(),
+home:  Home(),
       //home: const SignIn()
     );
   }
