@@ -11,7 +11,7 @@ class _DealsState extends State<Deals> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      
+
     );
   }
 }
