@@ -74,10 +74,10 @@ flutter:
      - assets/images/mushroom.png
      - assets/images/oats.png
      - assets/images/rice.png
-     -  assets/images/dairy.png
-     -  assets/images/egg.png
-     -  assets/images/bread.png
-     -  assets/images/veggies.png
+     - assets/images/dairy.png
+     - assets/images/egg.png
+     - assets/images/bread.png
+     - assets/images/veggies.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

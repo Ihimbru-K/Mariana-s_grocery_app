@@ -17,10 +17,10 @@ class _HomeState extends State<Home> {
     final double screenWidth = MediaQuery.of(context).size.height;
     const String name = "Rafatul Islam";
     return Scaffold(
-      backgroundColor: white,
+      backgroundColor: bgcolor,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: white,
+        backgroundColor: bgcolor,
         leading: Row(
           //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [ Column(children: const [ SizedBox(height: 5,),
@@ -37,6 +37,7 @@ class _HomeState extends State<Home> {
       body: Container(
         padding: EdgeInsets.only(left: screenWidth*0.042),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -98,33 +99,197 @@ class _HomeState extends State<Home> {
             children: const [
               Text("Categories", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),), Icon(Icons.arrow_forward, color: Colors.black,)
             ],),
-          SizedBox(height:  screenHeight*0.07,),
+          SizedBox(height:  screenHeight*0.03,),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 //padding: EdgeInsets.all(3),
-                width: screenWidth * 0.2,
-                height: screenHeight*0.2,
+                width: screenWidth * 0.165,
+                height: screenHeight*0.123,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     color: white,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.5),
-                        //spreadRadius: 2,
-                        // blurRadius: 5,
-                        // offset: const Offset(0, 3),
+                        spreadRadius: 2,
+                        blurRadius: 6,
+                        offset: const Offset(3, 3),
                       ),
                     ]),
                 child: Center(
 
-                  child:  Image.asset("assets/images/reciperec.png", scale: 3.5, fit: BoxFit.fill, ),
+                  child:  Image.asset("assets/images/fruits.png", scale: 2, fit: BoxFit.fill, ),
 
 
                 ),
               ),
+              SizedBox(width: screenWidth*0.015,),
+              Container(
+                //padding: EdgeInsets.all(3),
+                width: screenWidth * 0.165,
+                height: screenHeight*0.123,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 6,
+                        offset: const Offset(0, 3),
+                      ),
+                    ]),
+                child: Center(
+
+                  child:  Image.asset("assets/images/fruits.png", scale: 2, fit: BoxFit.fill, ),
+
+
+                ),
+              ),
+              SizedBox(width: screenWidth*0.015,),
+              Container(
+                //padding: EdgeInsets.all(3),
+                width: screenWidth * 0.165,
+                height: screenHeight*0.123,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 6,
+                        offset: const Offset(0, 3),
+                      ),
+                    ]),
+                child: Center(
+
+                  child:  Image.asset("assets/images/fruits.png", scale: 2, fit: BoxFit.fill, ),
+
+
+                ),
+              ),
+              SizedBox(width: screenWidth*0.015,),
+              Container(
+                //padding: EdgeInsets.all(3),
+                width: screenWidth * 0.165,
+                height: screenHeight*0.123,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 6,
+                        offset: const Offset(0, 3),
+                      ),
+                    ]),
+                child: Center(
+
+                  child:  Image.asset("assets/images/fruits.png", scale: 2, fit: BoxFit.fill, ),
+
+
+                ),
+              ),
+              SizedBox(width: screenWidth*0.015,),
+              Container(
+                //padding: EdgeInsets.all(3),
+                width: screenWidth * 0.165,
+                height: screenHeight*0.123,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 6,
+                        offset: const Offset(0, 3),
+                      ),
+                    ]),
+                child: Center(
+
+                  child:  Image.asset("assets/images/fruits.png", scale: 2, fit: BoxFit.fill, ),
+
+
+                ),
+              ),
+              SizedBox(width: screenWidth*0.015,),
+              Container(
+                //padding: EdgeInsets.all(3),
+                width: screenWidth * 0.165,
+                height: screenHeight*0.123,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 12,
+                        offset: const Offset(0, 3),
+                      ),
+                    ]),
+                child: Center(
+
+                  child:  Image.asset("assets/images/fruits.png", scale: 2, fit: BoxFit.fill, ),
+
+
+                ),
+              ),
+              SizedBox(width: screenWidth*0.015,),
+              Container(
+                //padding: EdgeInsets.all(3),
+                width: screenWidth * 0.165,
+                height: screenHeight*0.123,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 12,
+                        offset: const Offset(0, 3),
+                      ),
+                    ]),
+                child: Center(
+
+                  child:  Image.asset("assets/images/fruits.png", scale: 2, fit: BoxFit.fill, ),
+
+
+                ),
+              ),
+              SizedBox(width: screenWidth*0.015,),
+              Container(
+                //padding: EdgeInsets.all(3),
+                width: screenWidth * 0.165,
+                height: screenHeight*0.123,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 12,
+                        offset: const Offset(0, 3),
+                      ),
+                    ]),
+                child: Center(
+
+                  child:  Image.asset("assets/images/fruits.png", scale: 2, fit: BoxFit.fill, ),
+
+
+                ),
+              ),
+              SizedBox(width: screenWidth*0.015,),
+
 
             ],
           ),)
