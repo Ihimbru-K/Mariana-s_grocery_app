@@ -93,11 +93,11 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          SizedBox(height:  screenHeight*0.05,),
+          SizedBox(height:  screenHeight*0.03,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              Text("Categories", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),), Icon(Icons.arrow_forward, color: Colors.black,)
+              Text("Categories", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), Icon(Icons.arrow_forward, color: Colors.black,)
             ],),
           SizedBox(height:  screenHeight*0.03,),
           SingleChildScrollView(
@@ -292,7 +292,14 @@ class _HomeState extends State<Home> {
 
 
             ],
-          ),)
+          ),),
+
+          SizedBox(height:  screenHeight*0.03,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text("Trending Deals", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), Icon(Icons.arrow_forward, color: Colors.black,)
+            ],),
 
 
 
