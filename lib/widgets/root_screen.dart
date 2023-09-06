@@ -36,6 +36,18 @@ class _RootScreenState extends State<RootScreen> {
 
 
       ),
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (index){
+          setState(() {
+            currentScreen = index;
+          });
+          controller.jumpTo(currentScreen as double)
+        }
+        destinations: [
+          
+        ],
+
+      ),
     );
   }
 }
