@@ -4,6 +4,7 @@ import 'package:grocery_app/inner_screens/home/06_home.dart';
 
 import '../inner_screens/categories/07_categories.dart';
 import '../inner_screens/deals_and_shopping/deals/deals.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 
 
 
@@ -41,10 +42,10 @@ class _RootScreenState extends State<RootScreen> {
           setState(() {
             currentScreen = index;
           });
-          controller.jumpTo(currentScreen as double)
-        }
-        destinations: [
-          
+          controller.jumpTo(currentScreen as double);
+        },
+        destinations: const [
+          NavigationDestination(icon: Icon(IconlyLight.home), label: "Home")
         ],
 
       ),
