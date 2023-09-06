@@ -15,8 +15,9 @@ class _DealsState extends State<Deals> {
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: lightYellow,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color:white),
           onPressed: () {},
         ),
         actions: [
