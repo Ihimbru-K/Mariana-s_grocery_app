@@ -300,6 +300,19 @@ class _HomeState extends State<Home> {
             children: const [
               Text("Trending Deals", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), Icon(Icons.arrow_forward, color: Colors.black,)
             ],),
+          SizedBox(width: screenWidth*0.015,),
+          Column(
+            children: [
+              Row(
+                children: [
+                  Container(),SizedBox(width: 3,),Container()
+                ],
+              )
+            ],
+          )
+
+
+
 
 
 
