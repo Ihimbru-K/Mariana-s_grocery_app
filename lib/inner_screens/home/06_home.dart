@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
+import '../../widgets/root_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class Home extends StatefulWidget {
 
 
 class _HomeState extends State<Home> {
+  int currentscreen = 0;
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -433,6 +435,7 @@ class _HomeState extends State<Home> {
 
         ],
       ),),
+      bottomNavigationBar: RootScreen(),
     );
   }
 }
