@@ -71,12 +71,19 @@ flutter:
      - assets/images/reciperec.png
      - assets/images/freshdeliv.png
      - assets/images/fruits.png
+     - assets/images/fruits2.png
      - assets/images/mushroom.png
+     - assets/images/mushroom2.png
      - assets/images/oats.png
+     - assets/images/oats2.png
      - assets/images/rice.png
+     - assets/images/rice2.png
      - assets/images/dairy.png
+     - assets/images/dairy2.png
      - assets/images/egg.png
+     - assets/images/egg2.png
      - assets/images/bread.png
+     - assets/images/bread2.png
      - assets/images/veggies.png
      - assets/images/avocado.png
      - assets/images/brocoli.png
