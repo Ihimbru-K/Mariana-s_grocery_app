@@ -44,8 +44,11 @@ class _RootScreenState extends State<RootScreen> {
           });
           controller.jumpTo(currentScreen as double);
         },
-        destinations: const [
-          NavigationDestination(icon: Icon(IconlyLight.home), label: "Home")
+        destinations:  [
+          const NavigationDestination( selectedIcon: Icon(IconlyBold.home), icon: Icon(IconlyLight.home), label: "Home"),
+          NavigationDestination( selectedIcon: Image.asset("assets/images/transferb.png"), icon: Image.asset("assets/images/transfer.png"), label: "transfer"),
+          const NavigationDestination( selectedIcon: Icon(Icons.favorite), icon: Icon(Icons.favorite), label: "favorite"),
+          const NavigationDestination( selectedIcon: Icon(Icons.picture_in_picture), icon: Icon(Icons.picture_in_picture), label: "profile")
         ],
 
       ),
