@@ -73,9 +73,7 @@ class _OnBoarding3State extends State<OnBoarding3> {
                 ),
               ),
             ),
-            SizedBox(
-              height: screenWidth * 0.00,
-            ),
+
             Container(
               padding: const EdgeInsets.all(12),
               width: screenWidth * 0.87,

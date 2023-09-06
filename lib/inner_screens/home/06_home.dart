@@ -305,11 +305,125 @@ class _HomeState extends State<Home> {
             children: [
               Row(
                 children: [
-                  Container(),SizedBox(width: 3,),Container()
+                  Container( width: screenWidth * 0.256,
+                    height: screenHeight*0.33,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            //spreadRadius: 2,
+                            // blurRadius: 5,
+                            // offset: const Offset(0, 3),
+                          ),
+                        ]),
+                    child: Expanded(
+
+                      child:  Image.asset("assets/images/avocado.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+                    ),
+
+
+                  ),SizedBox(width: screenWidth*0.027,),Container( width: screenWidth * 0.256,
+                    height: screenHeight*0.33,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            //spreadRadius: 2,
+                            // blurRadius: 5,
+                            // offset: const Offset(0, 3),
+                          ),
+                        ]),
+                    child: Expanded(
+
+                      child:  Image.asset("assets/images/brocoli.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+                    ),
+                  ),
                 ],
-              )
+              ),
+              SizedBox(width: screenWidth*0.015,),
+              Row(
+                children: [
+                  Container( width: screenWidth * 0.256,
+                    height: screenHeight*0.33,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            //spreadRadius: 2,
+                            // blurRadius: 5,
+                            // offset: const Offset(0, 3),
+                          ),
+                        ]),
+                    child: Expanded(
+
+                      child:  Image.asset("assets/images/tomato.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+                    ),
+
+
+                  ),SizedBox(width: screenWidth*0.027,),Container( width: screenWidth * 0.256,
+                    height: screenHeight*0.33,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            //spreadRadius: 2,
+                            // blurRadius: 5,
+                            // offset: const Offset(0, 3),
+                          ),
+                        ]),
+                    child: Expanded(
+
+                      child:  Image.asset("assets/images/grapes.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+                    ),
+                  ),
+                ],
+              ),
             ],
-          )
+          ),
+          Container(
+            padding: EdgeInsets.all(12),
+            width: screenWidth * 0.87,
+            height: screenWidth * 0.19,
+            child: ElevatedButton(
+              onPressed: () {
+                // Navigator.push(
+                // context,
+                //MaterialPageRoute(builder: (context) => const Login()),
+                //);
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+              ),
+              child: const Center(
+                child: Text(
+                  "More",
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: white,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          ),
+
 
 
 
