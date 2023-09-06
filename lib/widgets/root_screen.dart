@@ -33,13 +33,16 @@ class _RootScreenState extends State<RootScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: controller,
         children: screens
 
 
       ),
       bottomNavigationBar: NavigationBar(
+        selectedIndex: currentScreen,
         onDestinationSelected: (index){
+
           setState(() {
             currentScreen = index;
           });
@@ -50,7 +53,7 @@ class _RootScreenState extends State<RootScreen> {
           NavigationDestination( selectedIcon: Image.asset("assets/images/transferb.png"), icon: Image.asset("assets/images/transfer.png"), label: "transfer"),
           const NavigationDestination( selectedIcon: Icon(Icons.shopping_cart_sharp, color: lightYellow,), icon: Icon(Icons.shopping_cart_sharp,), label: "favorite"),
           const NavigationDestination( selectedIcon: Icon(Icons.favorite), icon: Icon(Icons.favorite,), label: "favorite"),
-          const NavigationDestination( selectedIcon: Icon(Icons.picture_in_picture), icon: Icon(Icons.picture_in_picture), label: "profile")
+          const NavigationDestination( selectedIcon: Icon(Icons.circle), icon: Icon(Icons.circle), label: "profile")
         ],
 
       ),
