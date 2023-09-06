@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/inner_screens/categories/07_categories.dart';
 import 'package:grocery_app/on_boarding/01_onboarding_0.dart';
 import 'package:grocery_app/on_boarding/01_onboarding_1.dart';
 import 'package:grocery_app/on_boarding/sign_in/05_signin.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
        // primarySwatch: Colors.orange,
       ),
 
-home:  Home(),
+home:  Categories(),
       //home: const SignIn()
     );
   }
