@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/constants/colors.dart';
 import 'package:grocery_app/inner_screens/deals_and_shopping/deals/item_deals.dart';
 import 'package:grocery_app/inner_screens/home/06_home.dart';
 
@@ -45,9 +46,10 @@ class _RootScreenState extends State<RootScreen> {
           controller.jumpTo(currentScreen as double);
         },
         destinations:  [
-          const NavigationDestination( selectedIcon: Icon(IconlyBold.home), icon: Icon(IconlyLight.home), label: "Home"),
+          const NavigationDestination( selectedIcon: Icon(IconlyBold.home, color: lightYellow,), icon: Icon(IconlyLight.home), label: "Home"),
           NavigationDestination( selectedIcon: Image.asset("assets/images/transferb.png"), icon: Image.asset("assets/images/transfer.png"), label: "transfer"),
-          const NavigationDestination( selectedIcon: Icon(Icons.favorite), icon: Icon(Icons.favorite), label: "favorite"),
+          const NavigationDestination( selectedIcon: Icon(Icons.shopping_cart_sharp, color: lightYellow,), icon: Icon(Icons.shopping_cart_sharp,), label: "favorite"),
+          const NavigationDestination( selectedIcon: Icon(Icons.favorite), icon: Icon(Icons.favorite,), label: "favorite"),
           const NavigationDestination( selectedIcon: Icon(Icons.picture_in_picture), icon: Icon(Icons.picture_in_picture), label: "profile")
         ],
 
