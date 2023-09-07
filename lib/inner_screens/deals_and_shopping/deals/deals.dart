@@ -346,7 +346,6 @@ class _DealsState extends State<Deals> {
               ),
 
 
-
             ],
           ),
         ),

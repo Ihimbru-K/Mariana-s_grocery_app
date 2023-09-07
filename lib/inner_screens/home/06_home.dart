@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
-import '../../widgets/root_screen.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -435,7 +435,7 @@ class _HomeState extends State<Home> {
 
         ],
       ),),
-      bottomNavigationBar: RootScreen(),
+
     );
   }
 }

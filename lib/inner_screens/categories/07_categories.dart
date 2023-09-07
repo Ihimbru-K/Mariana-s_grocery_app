@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
-import '../../widgets/root_screen.dart';
+
 
 
 class Categories extends StatefulWidget {
@@ -12,7 +12,7 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
-  int currentscreen = 1;
+
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -223,7 +223,6 @@ class _CategoriesState extends State<Categories> {
         ],),
 
       ),
-      bottomNavigationBar: RootScreen(),
     );
   }
 }
