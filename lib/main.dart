@@ -29,7 +29,8 @@ class MyApp extends StatelessWidget {
       ),
 
       //home:  Home(),
-      home: Categories(),
+      //home: Categories(),
+      home: const Onboarding0(),
     );
   }
 }

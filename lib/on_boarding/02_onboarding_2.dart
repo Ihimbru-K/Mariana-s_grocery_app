@@ -31,6 +31,28 @@ class _OnBoarding2State extends State<OnBoarding2> {
         padding: EdgeInsets.only(left: screenWidth*0.0, top: screenHeight*0.0, bottom: screenWidth*0.0),
         child: Column(
           children: [
+            Container(
+              //padding: EdgeInsets.all(3),
+              width: screenWidth * 0.9,
+              height: screenHeight*0.4,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      //spreadRadius: 2,
+                      // blurRadius: 5,
+                      // offset: const Offset(0, 3),
+                    ),
+                  ]),
+              child: Expanded(
+
+                child:  Image.asset("assets/images/onboarding2.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+              ),
+            ),
             Image.asset("assets/images/onboarding2.png",height: screenHeight*0.1, width: screenWidth*0.9,),
             SizedBox(
               height: screenHeight * 0.09,
