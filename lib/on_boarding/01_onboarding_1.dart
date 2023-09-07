@@ -21,10 +21,10 @@ class _OnBoarding1State extends State<OnBoarding1> {
 
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        leading: const Icon(
+        leading: IconButton(icon : const Icon(
           Icons.arrow_back,
           color: lightYellow,
-        ),
+        ), onPressed: (){Navigator.pop(context);},) ,
         elevation: 0,
       ),
       body: Container(
