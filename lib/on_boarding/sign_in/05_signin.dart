@@ -3,7 +3,6 @@ import 'package:grocery_app/inner_screens/home/06_home.dart';
 
 import '../../constants/colors.dart';
 
-
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
 
@@ -14,7 +13,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   bool _passwordVisible = false;
 
-  void _togglePasswordVisibility(){
+  void _togglePasswordVisibility() {
     setState(() {
       _passwordVisible = !_passwordVisible;
     });
@@ -23,9 +22,8 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
-    final double screenWidth = MediaQuery.of(context).size.height;
-    return  Scaffold(
-
+    final double screenWidth = MediaQuery.of(context).size.width;
+    return Scaffold(
       body: Stack(
         children: [
           Image.asset(
@@ -36,44 +34,50 @@ class _SignInState extends State<SignIn> {
           ),
           Center(
             child: Container(
-              height: screenHeight* 0.3,
-              width: screenWidth* 0.8,
+              height: screenHeight * 0.3,
+              //width: screenWidth*0.9,
               decoration: BoxDecoration(
                 color: white,
                 borderRadius: BorderRadius.circular(20.0),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                //crossAxisAlignment: CrossAxisAlignment.stretch,
+              child: SizedBox(
+
+                child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children:  [
+                    children: [
                       Padding(
-                        padding: EdgeInsets.all(10.0),
+                        padding: EdgeInsets.all(screenWidth * 0.04),
                         child: Text(
                           'Sign in',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: screenWidth * 0.05,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.all(16.0),
+                        padding: EdgeInsets.all(screenWidth * 0.064),
                         child: CircleAvatar(
-                          radius: 15,
+                          radius: screenWidth * 0.024,
                           backgroundColor: black,
-                          child: Icon(Icons.close, color: white, ),
+                          child: Icon(
+                            Icons.close,
+                            color: white,
+                          ),
                         ),
                       ),
-                    ],),
+                    ],
+                  ),
 
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
                     child: TextField(
-                      decoration: const InputDecoration(
-
+                      decoration: InputDecoration(
                         hintText: 'Email',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -83,65 +87,70 @@ class _SignInState extends State<SignIn> {
                       controller: TextEditingController(text: 'rafatul3588@gmail.com'),
                     ),
                   ),
-                  const SizedBox(height: 18.0),
+                  SizedBox(height: screenWidth * 0.048),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
                     child: TextField(
-
                       decoration: InputDecoration(
-                        border: const OutlineInputBorder(
+                        border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           borderSide: BorderSide(color: black),
                         ),
                         hintText: 'Password',
-
-
                         suffixIcon: IconButton(
-                          icon: Icon(_passwordVisible? Icons.visibility_off: Icons.visibility),
+                          icon: Icon(_passwordVisible ? Icons.visibility_off : Icons.visibility),
                           onPressed: _togglePasswordVisibility,
                         ),
                       ),
                       obscureText: !_passwordVisible,
                     ),
                   ),
-                  const SizedBox(height: 16,),
-                  Center(child: GestureDetector(onTap: (){},
-                    child: const Text("Got Password?", style: TextStyle(color: lightYellow, fontSize: 16),),
-                  ),),
-                  SizedBox(height: screenHeight*0.06,),
+                  SizedBox(height: screenWidth * 0.032),
+                  Center(
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        "Forgot Password?",
+                        style: TextStyle(color: lightYellow, fontSize: screenWidth * 0.04),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: screenHeight * 0.06),
                   Container(
-                    padding: const EdgeInsets.all(12),
+                    //padding: EdgeInsets.all(screenWidth * 0.048),
                     width: screenWidth * 0.87,
                     height: screenWidth * 0.13,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) =>  Home()),
+                          MaterialPageRoute(builder: (context) => Home()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: lightYellow,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Text(
                           "Sign in",
                           style: TextStyle(
-                              fontSize: 16,
-                              color: black,
-                              fontWeight: FontWeight.bold),
+                            fontSize: screenWidth * 0.04,
+                            color: black,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
                   ),
-
-
                 ],
-              ),
+              ),)
             ),
           ),
         ],
       ),
-    );}}
+    );
+  }
+}
