@@ -53,13 +53,21 @@ class _OnBoarding2State extends State<OnBoarding2> {
 
               ),
             ),
-            Image.asset("assets/images/onboarding2.png",height: screenHeight*0.1, width: screenWidth*0.9,),
             SizedBox(
-              height: screenHeight * 0.09,
+              height: screenHeight * 0.03,
             ),
             const Center(
               child: Text(
-                "We provide best quality Fruits to your family",
+                "We provide best quality",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 23,
+                ),
+              ),
+            ),
+            const Center(
+              child: Text(
+                "Fruits to your family",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 23,
@@ -67,10 +75,11 @@ class _OnBoarding2State extends State<OnBoarding2> {
               ),
             ),
             SizedBox(height: screenHeight*0.05,),
-            const Center(child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed ", style: TextStyle(color: black),),),
+            const Center(child: Text("Lorem ipsum dolor sit amet, consectetur", style: TextStyle(color: black),),),
+            const Center(child: Text("adipiscing elit, sed ", style: TextStyle(color: black),),),
             SizedBox(height: screenHeight*0.06,),
             Image.asset("assets/images/indicator2.png", height: 10, width: 90),
-            SizedBox(height: screenHeight*0.09,),
+            SizedBox(height: screenHeight*0.06,),
             Container(
               padding: EdgeInsets.all(12),
               width: screenWidth * 0.87,

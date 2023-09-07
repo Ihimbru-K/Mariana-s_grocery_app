@@ -26,7 +26,7 @@ class _OnBoarding3State extends State<OnBoarding3> {
           children: [
             Image.asset("assets/images/onboarding3.png", height: screenHeight*0.25, width: screenWidth*0.9,),
             SizedBox(
-              height: screenHeight * 0.07,
+              height: screenHeight * 0.1,
             ),
             const Center(
               child: Text(
@@ -34,14 +34,14 @@ class _OnBoarding3State extends State<OnBoarding3> {
 
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 28,
                 ),
               ),
             ),
-            const Center(child: Text("delivery by our courir",style: TextStyle(fontSize: 20,fontWeight:FontWeight.bold)), ),
+            const Center(child: Text("delivery by our courir",style: TextStyle(fontSize: 28,fontWeight:FontWeight.bold)), ),
             SizedBox(height: screenHeight*0.03,),
-            const Center(child: Text("Lorem ipsum dolor sit amet, consectetur", style: TextStyle(color: black),),),
-            const Center(child: Text("adipiscing elit, sed do eiusmod tempor ", style: TextStyle(color: black),),),
+            const Center(child: Text("Lorem ipsum dolor sit amet, consectetur", style: TextStyle(color: black,fontSize: 16),),),
+            const Center(child: Text("adipiscing elit, sed do eiusmod tempor ", style: TextStyle(color: black,fontSize: 16),),),
             SizedBox(height: screenHeight*0.04,),
             Image.asset("assets/images/indicator3.png", height: 10, width: 90),
             SizedBox(height: screenHeight*0.06,),

@@ -28,10 +28,10 @@ class _OnBoarding1State extends State<OnBoarding1> {
         elevation: 0,
       ),
       body: Container(
-        padding: EdgeInsets.only(left: screenWidth*0.0, top: screenHeight*0.05, bottom: screenWidth*0.0),
+        padding: EdgeInsets.only(left: screenWidth*0.0, top: screenHeight*0.08, bottom: screenWidth*0.0),
         child: Column(
           children: [
-            Image.asset("assets/images/onboarding1.png", height: 175,),
+            Image.asset("assets/images/onboarding1.png", height: screenHeight*0.32,),
             SizedBox(
               height: screenHeight * 0.07,
             ),
