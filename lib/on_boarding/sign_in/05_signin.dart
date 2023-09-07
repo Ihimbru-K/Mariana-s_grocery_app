@@ -35,12 +35,13 @@ class _SignInState extends State<SignIn> {
           Center(
             child: Container(
               height: screenHeight * 0.3,
-              //width: screenWidth*0.9,
+              width: screenWidth*0.9,
               decoration: BoxDecoration(
                 color: white,
                 borderRadius: BorderRadius.circular(20.0),
               ),
-              child: SizedBox(
+              child: FittedBox(
+                fit: BoxFit.fitHeight,
 
                 child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
