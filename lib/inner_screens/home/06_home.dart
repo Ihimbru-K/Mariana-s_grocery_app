@@ -303,7 +303,7 @@ class _HomeState extends State<Home> {
               Text("Trending Deals", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), Icon(Icons.arrow_forward, color: Colors.black,)
             ],),
           SizedBox(width: screenWidth*0.015,),
-          Column(
+          SingleChildScrollView(child: Column(
             children: [
               Row(
                 children: [
@@ -397,7 +397,7 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ],
-          ),
+          ),),
           Container(
             padding: EdgeInsets.all(12),
             width: screenWidth * 0.87,

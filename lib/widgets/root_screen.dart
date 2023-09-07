@@ -22,10 +22,11 @@ class _RootScreenState extends State<RootScreen> {
   @override
   void initState() {
     super.initState();
-    screens = const [
+    screens =  [
       Home(),
-      Deals(),
       Categories(),
+      Deals(),
+
     ];
     controller = PageController(initialPage: currentScreen);
   }
@@ -47,7 +48,7 @@ class _RootScreenState extends State<RootScreen> {
           controller.jumpToPage(currentScreen);
         },
         destinations: [
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(IconlyBold.home, color: lightYellow),
             icon: Icon(IconlyLight.home),
             label: "Home",
@@ -57,17 +58,17 @@ class _RootScreenState extends State<RootScreen> {
             icon: Image.asset("assets/images/transfer.png"),
             label: "transfer",
           ),
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(Icons.shopping_cart_sharp, color: lightYellow),
             icon: Icon(Icons.shopping_cart_sharp),
             label: "favorite",
           ),
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(Icons.favorite),
             icon: Icon(Icons.favorite),
             label: "favorite",
           ),
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(Icons.circle),
             icon: Icon(Icons.circle),
             label: "profile",

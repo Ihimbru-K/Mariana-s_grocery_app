@@ -48,7 +48,7 @@ class _SignInState extends State<SignIn> {
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children:  [
                       Padding(
                         padding: EdgeInsets.all(10.0),
                         child: Text(
@@ -117,7 +117,7 @@ class _SignInState extends State<SignIn> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const Home()),
+                          MaterialPageRoute(builder: (context) =>  Home()),
                         );
                       },
                       style: ElevatedButton.styleFrom(

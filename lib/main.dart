@@ -28,9 +28,8 @@ class MyApp extends StatelessWidget {
        // primarySwatch: Colors.orange,
       ),
 
-
-home:  Categories(),
-      //home: const SignIn()
+      //home:  Home(),
+      home: Categories(),
     );
   }
 }
