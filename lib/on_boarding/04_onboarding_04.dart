@@ -6,9 +6,13 @@ import '../../inner_screens/home/06_home.dart';
 class CreateAccount extends StatefulWidget {
   @override
   _CreateAccountState createState() => _CreateAccountState();
+
+
 }
 
 class _CreateAccountState extends State<CreateAccount> {
+  TextEditingController _firstNameController = TextEditingController();
+  TextEditingController _lastNameController = TextEditingController();
   bool _passwordVisible = false;
 
   void _togglePasswordVisibility() {
