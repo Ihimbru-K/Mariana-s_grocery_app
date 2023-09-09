@@ -16,6 +16,43 @@ class _CreateAccountState extends State<CreateAccount> {
       _passwordVisible = !_passwordVisible;
     });
   }
+  void _showCreateAccountDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Create Account'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset(
+                'assets/images/congrats.png',
+                height: 100,
+                width: 100,
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                child: Text('Sign In'),
+                onPressed: () {
+                  // Add sign-in functionality here
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              child: Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +116,7 @@ class _CreateAccountState extends State<CreateAccount> {
                       width: textFieldWidth,
                       child: TextField(
                         decoration: InputDecoration(
-                          labelText: 'lirst name',
+                          labelText: 'first name',
                         ),
                       ),
                     ),
@@ -144,10 +181,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   height: screenWidth * 0.15,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Home()),
-                      );
+                      _showCreateAccountDialog(context);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: lightYellow,
