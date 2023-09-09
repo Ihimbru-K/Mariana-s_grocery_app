@@ -18,8 +18,16 @@ class _OnBoarding3State extends State<OnBoarding3> {
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
+
+        leading: const CircleAvatar(
+        backgroundColor: Colors.orange,
+        child: Icon(
+          Icons.close,
+          color: black,
+        ),
+      ),
+        title: const Text("Write Reviews"),
+        centerTitle: true,
       ),
       body: Container(
         padding: EdgeInsets.only(left: screenWidth*0.0, top: screenHeight*0.01, bottom: screenWidth*0.0),

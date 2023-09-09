@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/inner_screens/home/06_home.dart';
 
 import '../../constants/colors.dart';
+import '../../inner_screens/home/06_home.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
-
   @override
-  State<SignIn> createState() => _SignInState();
+  _SignInState createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
@@ -21,32 +19,26 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Stack(
         children: [
-          Image.asset(
-            'assets/images/4onboarding3.png',
-            fit: BoxFit.cover,
-            height: double.infinity,
-            width: double.infinity,
+          // Background Image
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/4onboarding3.png',
+              fit: BoxFit.cover,
+            ),
           ),
-          Center(
-            child: Container(
-              height: screenHeight * 0.3,
-              width: screenWidth*0.9,
-              decoration: BoxDecoration(
-                color: white,
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: FittedBox(
-                fit: BoxFit.fitHeight,
+          // Content Widget
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.75 - MediaQuery.of(context).size.height * 0.25,
+            left: MediaQuery.of(context).size.width * 0.02,
+            right: MediaQuery.of(context).size.width * 0.02,
 
-                child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,23 +54,28 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.all(screenWidth * 0.064),
+                        padding: EdgeInsets.all(screenWidth * 0.04),
                         child: CircleAvatar(
-                          radius: screenWidth * 0.024,
+                          radius: screenWidth * 0.043,
                           backgroundColor: black,
-                          child: Icon(
-                            Icons.close,
-                            color: white,
-                          ),
+                          child: Center(child: IconButton(
+                            icon: Icon(
+                              Icons.close,
+                              color: white,
+                            ),
+                            onPressed: () {
+                              // Handle close button action
+                            },
+                          ),)
                         ),
                       ),
                     ],
                   ),
 
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
+                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.017),
                     child: TextField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Email',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -88,9 +85,9 @@ class _SignInState extends State<SignIn> {
                       controller: TextEditingController(text: 'rafatul3588@gmail.com'),
                     ),
                   ),
-                  SizedBox(height: screenWidth * 0.048),
+                  SizedBox(height: 16.0),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
+                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.017),
                     child: TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -116,11 +113,10 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                   ),
-                  SizedBox(height: screenHeight * 0.06),
+                  SizedBox(height: screenHeight*0.05),
                   Container(
-                    //padding: EdgeInsets.all(screenWidth * 0.048),
                     width: screenWidth * 0.87,
-                    height: screenWidth * 0.13,
+                    height: screenWidth * 0.15,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
@@ -147,8 +143,8 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                 ],
-              ),)
-            ),
+              ),
+
           ),
         ],
       ),

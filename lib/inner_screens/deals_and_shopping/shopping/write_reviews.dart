@@ -31,7 +31,7 @@ class _WriteReviewsState extends State<WriteReviews> {
             color: black,
           ),
         ),
-        title: const Text("Write Reviews"),
+        title: const Text("Write Reviews", style: TextStyle(color: black),),
         centerTitle: true,
       ),
       body: Container(
