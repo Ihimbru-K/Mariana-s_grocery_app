@@ -56,7 +56,7 @@ class _SignInState extends State<SignIn> {
                       Padding(
                         padding: EdgeInsets.all(screenWidth * 0.04),
                         child: CircleAvatar(
-                          radius: screenWidth * 0.043,
+                          radius: screenWidth * 0.049,
                           backgroundColor: black,
                           child: Center(child: IconButton(
                             icon: Icon(
@@ -73,7 +73,7 @@ class _SignInState extends State<SignIn> {
                   ),
 
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.017),
+                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                     child: TextField(
                       decoration: const InputDecoration(
                         hintText: 'Email',
@@ -87,7 +87,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   SizedBox(height: 16.0),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.017),
+                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                     child: TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -115,7 +115,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   SizedBox(height: screenHeight*0.05),
                   Container(
-                    width: screenWidth * 0.87,
+                    width: screenWidth * 0.4,
                     height: screenWidth * 0.15,
                     child: ElevatedButton(
                       onPressed: () {
