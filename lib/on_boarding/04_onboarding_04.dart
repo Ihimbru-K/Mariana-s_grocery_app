@@ -52,6 +52,12 @@ class _CreateAccountState extends State<CreateAccount> {
       },
     );
   }
+  @override
+  void dispose() {
+    _firstNameController.dispose();
+    _lastNameController.dispose();
+    super.dispose();
+  }
 
 
   @override
