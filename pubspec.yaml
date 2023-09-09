@@ -94,6 +94,7 @@ flutter:
      - assets/images/filter.png
      - assets/images/transfer.png
      - assets/images/transferb.png
+     - assets/images/4onboarding2.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
