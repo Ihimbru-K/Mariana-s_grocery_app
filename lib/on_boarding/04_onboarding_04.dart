@@ -27,76 +27,93 @@ class _CreateAccountState extends State<CreateAccount> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: white,
-          title: Text('Create Account'),
+
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30.0),
+            ),
           content: Container(
-            height: MediaQuery.of(context).size.height*0.65,
-            width:  MediaQuery.of(context).size.width*0.9,
+
+            // height: MediaQuery.of(context).size.height*0.65,
+            //width:  MediaQuery.of(context).size.width*0.9,
             child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.asset(
-                'assets/images/congrats.png',
-                height: 100,
-                width: 100,
-              ),
-              SizedBox(height: 20),
-              Text(
-                'Congratulations!',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: Colors.orange
-                ),
-              ),
-              SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    _firstNameController.text,
-
-                    style: TextStyle(fontSize: 16, color: Colors.purple),
-                  ),
-                  Text(
-                    _lastNameController.text,
-                    style: TextStyle(fontSize: 16, color: Colors.purple),
-                  ),
-                ],
-              ),
-
-              SizedBox(height: 20),
-
-              Container(
-                width: MediaQuery.of(context).size.width * 0.2,
-                height: MediaQuery.of(context).size.height * 0.1,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignIn()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: lightYellow,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Stack(
+                  children: [
+                    Image.asset(
+                      'assets/images/congrats.png',
+                      height: 300,
+                      width: 300,
                     ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Sign in",
-                      style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.width * 0.04,
-                        color: black,
-                        fontWeight: FontWeight.bold,
+                    Center(child: Stack(
+                      children: [
+                        Image.asset(
+                          'assets/images/congrats.png',
+                          height: 300,
+                          width: MediaQuery.of(context).size.width*0.4,
+                        ),
+                        Text(
+                          'Congratulations!',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                            color: Colors.orange,
+                          ),
+                        ),
+                      ],
+                    ),)
+                  ],
+                ),
+                //  SizedBox(height: 20),
+
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      _firstNameController.text,
+
+                      style: TextStyle(fontSize: 16, color: Colors.purple),
+                    ),
+                    Text(
+                      _lastNameController.text,
+                      style: TextStyle(fontSize: 16, color: Colors.purple),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 20),
+
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.08,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignIn()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: lightYellow,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Sign in",
+                        style: TextStyle(
+                          fontSize: MediaQuery.of(context).size.width * 0.04,
+                          color: black,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),),
+              ],
+            ),),
           actions: [
             TextButton(
               child: Text('Close'),
@@ -134,7 +151,7 @@ class _CreateAccountState extends State<CreateAccount> {
           ),
           // Content Widget
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.75 - MediaQuery.of(context).size.height * 0.25,
+            top: MediaQuery.of(context).size.height * 0.65 - MediaQuery.of(context).size.height * 0.25,
             left: MediaQuery.of(context).size.width * 0.02,
             right: MediaQuery.of(context).size.width * 0.02,
 

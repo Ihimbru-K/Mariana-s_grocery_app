@@ -16,8 +16,7 @@ class _OnBoarding3State extends State<OnBoarding3> {
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
-    TextEditingController _firstNameController = TextEditingController();
-    TextEditingController _lastNameController = TextEditingController();
+    
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
@@ -77,6 +76,7 @@ class _OnBoarding3State extends State<OnBoarding3> {
               height: screenWidth * 0.19,
               child: ElevatedButton(
                 onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>CreateAccount()));
 
                 },
                 style: ElevatedButton.styleFrom(

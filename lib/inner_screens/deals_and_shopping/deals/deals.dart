@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/widgets/root_screen.dart';
 import '../../../constants/colors.dart';
 
 class Deals extends StatefulWidget {
@@ -30,21 +31,20 @@ class _DealsState extends State<Deals> {
         ],
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(40),
-          child: Container(
-            child: Column(
-              children: const [
-                Text(
-                  "Fruits Category",
-                  style: TextStyle(
-                    color: white,
-                    fontSize: 23,
-                    fontWeight: FontWeight.bold,
-                  ),
+          child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                "Fruits Category",
+                style: TextStyle(
+                  color: white,
+                  fontSize: 23,
+                  fontWeight: FontWeight.bold,
                 ),
-                SizedBox(height: 2),
-                Text("87 items"),
-              ],
-            ),
+              ),
+              SizedBox(height: 2),
+              Text("87 items"),
+            ],
           ),
         ),
       ),
@@ -55,7 +55,7 @@ class _DealsState extends State<Deals> {
         color: white,
         elevation: 2.0,
         child: Container(
-          padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.only(left: screenWidth*0.06, right: screenWidth*0.03,top:screenWidth*0.035, ),
           child: Column(
             children: [
               TextField(
@@ -75,7 +75,7 @@ class _DealsState extends State<Deals> {
                 children: [
                   Column(
                     children: [
-                      Container( width: screenWidth * 0.256,
+                      Container( width: screenWidth * 0.41,
                         height: screenHeight*0.33,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -95,7 +95,7 @@ class _DealsState extends State<Deals> {
 
                         ),),
                       SizedBox(height: screenWidth*0.03,),
-                      Container( width: screenWidth * 0.256,
+                      Container( width: screenWidth * 0.41,
                         height: screenHeight*0.33,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -116,7 +116,7 @@ class _DealsState extends State<Deals> {
                         ),
                       ),
                       SizedBox(height: screenWidth*0.03),
-                      Container( width: screenWidth * 0.256,
+                      Container( width: screenWidth * 0.41,
                         height: screenHeight*0.33,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -137,7 +137,7 @@ class _DealsState extends State<Deals> {
                         ),
                       ),
                       SizedBox(height: screenWidth*0.03),
-                      Container( width: screenWidth * 0.256,
+                      Container( width: screenWidth * 0.41,
                         height: screenHeight*0.33,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -158,7 +158,7 @@ class _DealsState extends State<Deals> {
                         ),
                       ),
                       SizedBox(height: screenWidth*0.03),
-                      Container( width: screenWidth * 0.256,
+                      Container( width: screenWidth * 0.41,
                         height: screenHeight*0.33,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -179,7 +179,7 @@ class _DealsState extends State<Deals> {
                         ),
                       ),
                       SizedBox(height: screenWidth*0.03),
-                      Container( width: screenWidth * 0.256,
+                      Container( width: screenWidth * 0.41,
                         height: screenHeight*0.33,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -200,7 +200,7 @@ class _DealsState extends State<Deals> {
                         ),
                       ),
                       SizedBox(height: screenWidth*0.03),
-                      Container( width: screenWidth * 0.256,
+                      Container( width: screenWidth * 0.41,
                         height: screenHeight*0.33,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -225,56 +225,31 @@ class _DealsState extends State<Deals> {
                   ),
 
 
-                  SizedBox(width: screenWidth*0.015,),
+                  SizedBox(width: screenWidth*0.05,),
 
 
 
-                  Column(children: [
-                    Container( width: screenWidth * 0.256,
-                      height: screenHeight*0.33,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              //spreadRadius: 2,
-                              // blurRadius: 5,
-                              // offset: const Offset(0, 3),
-                            ),
-                          ]),
-                      child: Expanded(
+                  Column(children: [Container( width: screenWidth * 0.41,
+                    height: screenHeight*0.33,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            //spreadRadius: 2,
+                            // blurRadius: 5,
+                            // offset: const Offset(0, 3),
+                          ),
+                        ]),
+                    child: Expanded(
 
-                        child:  Image.asset("assets/images/tomato.png", scale: 3.5, fit: BoxFit.fill, ),
-
-
-                      ),
+                      child:  Image.asset("assets/images/avocado.png", scale: 3.5, fit: BoxFit.fill, ),
 
 
-                    ),
-                    SizedBox(height: screenWidth*0.03),
-                    Container( width: screenWidth * 0.256,
-                      height: screenHeight*0.33,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              //spreadRadius: 2,
-                              // blurRadius: 5,
-                              // offset: const Offset(0, 3),
-                            ),
-                          ]),
-                      child: Expanded(
-
-                        child:  Image.asset("assets/images/grapes.png", scale: 3.5, fit: BoxFit.fill, ),
-
-
-                      ),
-                    ),
-                    SizedBox(height: screenWidth*0.03),
-                    Container( width: screenWidth * 0.256,
+                    ),),
+                    SizedBox(height: screenWidth*0.03,),
+                    Container( width: screenWidth * 0.41,
                       height: screenHeight*0.33,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -295,7 +270,7 @@ class _DealsState extends State<Deals> {
                       ),
                     ),
                     SizedBox(height: screenWidth*0.03),
-                    Container( width: screenWidth * 0.256,
+                    Container( width: screenWidth * 0.41,
                       height: screenHeight*0.33,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -316,8 +291,7 @@ class _DealsState extends State<Deals> {
                       ),
                     ),
                     SizedBox(height: screenWidth*0.03),
-
-                    Container( width: screenWidth * 0.256,
+                    Container( width: screenWidth * 0.41,
                       height: screenHeight*0.33,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -337,6 +311,70 @@ class _DealsState extends State<Deals> {
 
                       ),
                     ),
+                    SizedBox(height: screenWidth*0.03),
+                    Container( width: screenWidth * 0.41,
+                      height: screenHeight*0.33,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              //spreadRadius: 2,
+                              // blurRadius: 5,
+                              // offset: const Offset(0, 3),
+                            ),
+                          ]),
+                      child: Expanded(
+
+                        child:  Image.asset("assets/images/grapes.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+                      ),
+                    ),
+                    SizedBox(height: screenWidth*0.03),
+                    Container( width: screenWidth * 0.41,
+                      height: screenHeight*0.33,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              //spreadRadius: 2,
+                              // blurRadius: 5,
+                              // offset: const Offset(0, 3),
+                            ),
+                          ]),
+                      child: Expanded(
+
+                        child:  Image.asset("assets/images/grapes.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+                      ),
+                    ),
+                    SizedBox(height: screenWidth*0.03),
+                    Container( width: screenWidth * 0.41,
+                      height: screenHeight*0.33,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              //spreadRadius: 2,
+                              // blurRadius: 5,
+                              // offset: const Offset(0, 3),
+                            ),
+                          ]),
+                      child: Expanded(
+
+                        child:  Image.asset("assets/images/grapes.png", scale: 3.5, fit: BoxFit.fill, ),
+
+
+                      ),
+                    ),
+
                   ],),
 
 
@@ -350,6 +388,7 @@ class _DealsState extends State<Deals> {
           ),
         ),
       ),),
+
     );
   }
 }
