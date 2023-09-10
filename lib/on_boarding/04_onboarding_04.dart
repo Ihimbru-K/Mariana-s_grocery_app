@@ -21,18 +21,49 @@ class _CreateAccountState extends State<CreateAccount> {
     });
   }
   void _showCreateAccountDialog(BuildContext context) {
-    showDialog(dd
+    showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          backgroundColor: white,
           title: Text('Create Account'),
-          content: Column(
+          content: Container(
+            height: MediaQuery.of(context).size.height*0.65,
+            width:  MediaQuery.of(context).size.width*0.9,
+            child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Image.asset(
                 'assets/images/congrats.png',
                 height: 100,
                 width: 100,
+              ),
+              SizedBox(height: 20),
+              Text(
+                'Congratulations!',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    _firstNameController.text,
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    _lastNameController.text,
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
               ),
               SizedBox(height: 20),
               ElevatedButton(
@@ -43,7 +74,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 },
               ),
             ],
-          ),
+          ),),
           actions: [
             TextButton(
               child: Text('Close'),
