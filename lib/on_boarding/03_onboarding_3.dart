@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/on_boarding/04_onboarding_04.dart';
+import 'package:grocery_app/on_boarding/sign_in/05_signin.dart';
 
 import '../constants/colors.dart';
 
@@ -104,6 +105,7 @@ class _OnBoarding3State extends State<OnBoarding3> {
               child: ElevatedButton(
                 onPressed: () {
                   // Add login functionality here
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> SignIn(),));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: bgcolor,
