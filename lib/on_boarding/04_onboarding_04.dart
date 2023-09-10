@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/on_boarding/sign_in/05_signin.dart';
 
 import '../../constants/colors.dart';
 import '../../inner_screens/home/06_home.dart';
@@ -14,6 +15,7 @@ class _CreateAccountState extends State<CreateAccount> {
   TextEditingController _firstNameController = TextEditingController();
   TextEditingController _lastNameController = TextEditingController();
   bool _passwordVisible = false;
+
 
   void _togglePasswordVisibility() {
     setState(() {
@@ -43,7 +45,8 @@ class _CreateAccountState extends State<CreateAccount> {
                 'Congratulations!',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 30,
+                  color: Colors.orange
                 ),
               ),
               SizedBox(height: 10),
@@ -52,26 +55,45 @@ class _CreateAccountState extends State<CreateAccount> {
                 children: [
                   Text(
                     _firstNameController.text,
-                    style: TextStyle(fontSize: 16),
+
+                    style: TextStyle(fontSize: 16, color: Colors.purple),
                   ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
                   Text(
                     _lastNameController.text,
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, color: Colors.purple),
                   ),
                 ],
               ),
+
               SizedBox(height: 20),
-              ElevatedButton(
-                child: Text('Sign In'),
-                onPressed: () {
-                  // Add sign-in functionality here
-                  Navigator.of(context).pop();
-                },
+
+              Container(
+                width: MediaQuery.of(context).size.width * 0.2,
+                height: MediaQuery.of(context).size.height * 0.1,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignIn()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: lightYellow,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Sign in",
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.width * 0.04,
+                        color: black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),),
