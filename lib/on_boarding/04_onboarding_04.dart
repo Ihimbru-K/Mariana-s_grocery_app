@@ -196,6 +196,7 @@ class _CreateAccountState extends State<CreateAccount> {
                       width: textFieldWidth,
                       child: TextField(
                         decoration: InputDecoration(
+
                           labelText: 'first name',
                         ),
                       ),
