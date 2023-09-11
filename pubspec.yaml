@@ -99,6 +99,7 @@ flutter:
      - assets/images/notification.png
      - assets/images/bike.png
      - assets/images/girl.png
+     - assets/images/people.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

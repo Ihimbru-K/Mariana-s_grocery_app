@@ -10,12 +10,19 @@ class ItemsDeals extends StatefulWidget {
 }
 
 class _ItemsDealsState extends State<ItemsDeals> {
+  int counter = 0;
+  double price = 4.9;
+  double rating = 4.5;
+  double reviews = 128;
+
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: const Icon(Icons.arrow_back),),),
+
       body: Stack(
         children: [
           // Background Image
@@ -34,38 +41,96 @@ class _ItemsDealsState extends State<ItemsDeals> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                Column(children: [Text("Fruits", style: TextStyle(fontSize: screenWidth*0.04,  fontWeight: FontWeight.bold),), Padding(
+                  padding: EdgeInsets.all(screenWidth * 0.04),
+                  child: Text(
+                    'Fresh Orange',
+                    style: TextStyle(
+                      fontSize: screenWidth * 0.05,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.all(screenWidth * 0.04),
-                      child: Text(
-                        'Sign in',
-                        style: TextStyle(
-                          fontSize: screenWidth * 0.05,
-                          fontWeight: FontWeight.bold,
+                    Text("$price", style: TextStyle(color: lightYellow, fontSize: screenWidth*0.04),),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            if (counter > 0) {
+                              counter--;
+                            }
+                          });
+                        },
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: lightYellow,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "-",
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(screenWidth * 0.04),
-                      child: CircleAvatar(
-                          radius: screenWidth * 0.049,
-                          backgroundColor: black,
+                      SizedBox(width: 16),
+                      Text(
+                        "$counter",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      SizedBox(width: 16),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            counter++;
+                          });
+                        },
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: lightYellow,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                           child: Center(
-                            child: IconButton(
-                              icon: Icon(
-                                Icons.close,
-                                color: white,
+                            child: Text(
+                              "+",
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
                               ),
-                              onPressed: () {
-                                // Handle close button action
-                              },
                             ),
-                          )),
-                    ),
-                  ],
-                ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],),
+                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(children: [
+                        const Icon(Icons.star, color: lightYellow,),
+                        Text("$rating", style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 23),),SizedBox(width:4,),
+                        Text("($reviews reviews,)", style: const TextStyle(color: dgrey),)
+                      ], ), Row(children: [Image.asset("assets/images/people.png")],)
+                  ],),
+
+                  
+                ],),
+
+
+
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                   child: TextField(

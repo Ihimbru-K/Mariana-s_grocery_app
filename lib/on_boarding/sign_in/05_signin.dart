@@ -22,6 +22,7 @@ class _SignInState extends State<SignIn> {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back),),),
       body: Stack(
         children: [
           // Background Image
