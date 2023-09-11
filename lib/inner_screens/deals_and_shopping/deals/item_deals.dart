@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants/colors.dart';
+import '../../others/discussions.dart';
+import '../shopping/write_reviews.dart';
 
 class ItemsDeals extends StatefulWidget {
   const ItemsDeals({Key? key}) : super(key: key);
@@ -10,6 +12,32 @@ class ItemsDeals extends StatefulWidget {
 }
 
 class _ItemsDealsState extends State<ItemsDeals> {
+  void navigateToPage(int index) {
+    if (index == 0) {
+      // Do nothing if the "Description" heading is tapped
+      return;
+    }
+
+    Widget page;
+    if (index == 1) {
+      page = WriteReviews();
+    } else if (index == 2) {
+      page = Discussions();
+    } else {
+      return;
+    }
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => page),
+    );
+  }
+  final List<Heading> headings = [
+    Heading('Description'),
+    Heading('Reviews'),
+    Heading('Discussions'),
+  ];
+  int selectedHeadingIndex = 0;
   int counter = 0;
   double price = 4.9;
   double rating = 4.5;
@@ -129,70 +157,84 @@ class _ItemsDealsState extends State<ItemsDeals> {
 
 
                 ],),
-
-
-
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-                  child: TextField(
-                    decoration: const InputDecoration(
-                      hintText: 'Email',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                        borderSide: BorderSide(color: black),
-                      ),
-                    ),
-                    controller:
-                        TextEditingController(text: 'rafatul3588@gmail.com'),
-                  ),
-                ),
-                SizedBox(height: 16.0),
-
-                SizedBox(height: screenWidth * 0.032),
-                Center(
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Text(
-                      "Forgot Password?",
-                      style: TextStyle(
-                          color: lightYellow, fontSize: screenWidth * 0.04),
-                    ),
-                  ),
-                ),
-                SizedBox(height: screenHeight * 0.05),
                 Container(
-                  width: screenWidth * 0.4,
-                  height: screenWidth * 0.15,
-                  child: ElevatedButton(
-                    onPressed: () {
-                     // Navigator.push(
-                      //  context,
-                       // MaterialPageRoute(builder: (context) => Home()),
-                     // );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: lightYellow,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Sign in",
-                        style: TextStyle(
-                          fontSize: screenWidth * 0.04,
-                          color: black,
-                          fontWeight: FontWeight.bold,
+                  height: 40,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: headings.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedHeadingIndex = index;
+                            navigateToPage(index);
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(
+                                color: index == selectedHeadingIndex
+                                    ? Colors.black
+                                    : Colors.transparent,
+                                width: 2,
+                              ),
+                            ),
+                          ),
+                          child: Text(
+                            headings[index].title,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: index == selectedHeadingIndex
+                                  ? FontWeight.bold
+                                  : FontWeight.normal,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
+                      );
+                    },
                   ),
+                ),
+                Expanded(
+                  child: selectedHeadingIndex == 0
+                      ? DescriptionPage()
+                      : Container(),
                 ),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+}
+class Heading {
+  final String title;
+
+  Heading(this.title);
+}
+
+class DescriptionPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          'Description',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(height: 16),
+        Expanded(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(16),
+            child: Text(
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
