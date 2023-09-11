@@ -44,7 +44,7 @@ class _CategoriesState extends State<Categories> {
                height: screenWidth*0.315,
                decoration: BoxDecoration(
                    borderRadius: BorderRadius.circular(20),
-                   color: white,
+                   color: selectedCategoryIndex ==0 ? lightYellow: white,
                    boxShadow: [
                      BoxShadow(
                        color: Colors.grey.withOpacity(0.5),
