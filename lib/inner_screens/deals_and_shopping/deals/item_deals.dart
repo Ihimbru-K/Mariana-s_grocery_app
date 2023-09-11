@@ -125,7 +125,7 @@ class _ItemsDealsState extends State<ItemsDeals> {
                         Text("($reviews reviews,)", style: const TextStyle(color: dgrey),)
                       ], ), Row(children: [Image.asset("assets/images/people.png")],)
                   ],),
-                  
+
 
 
                 ],),
