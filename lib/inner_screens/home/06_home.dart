@@ -35,8 +35,8 @@ class _HomeState extends State<Home> {
 
           ],),
 
-        actions: const [
-          Icon(Icons.notification_add_rounded, color: black,)
+        actions:  [
+         IconButton(onPressed: (){}, icon:Image.asset("assets/images/notification.png"))
           ],
       ),
       body: SingleChildScrollView(child: Container(

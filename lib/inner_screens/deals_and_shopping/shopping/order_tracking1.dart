@@ -26,7 +26,7 @@ class _OnBoarding3State extends State<OnBoarding3> {
           color: black,
         ),
       ),
-        title: const Text("Write Reviews"),
+        title: const Text("Thank You"),
         centerTitle: true,
       ),
       body: Container(
