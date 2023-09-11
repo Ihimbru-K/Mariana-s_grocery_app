@@ -66,7 +66,8 @@ flutter:
      - assets/images/onboarding1.png
      - assets/images/onboarding2.png
      - assets/images/onboarding3.png
-     - assets/images/4onboarding3.png
+     - assets/images/onboarding4.png
+     - assets/images/onboarding5.png
      - assets/images/indicator.png
      - assets/images/indicator2.png
      - assets/images/indicator3.png
@@ -94,7 +95,6 @@ flutter:
      - assets/images/filter.png
      - assets/images/transfer.png
      - assets/images/transferb.png
-     - assets/images/4onboarding2.png
      - assets/images/congrats.png
      - assets/images/notification.png
      - assets/images/bike.png

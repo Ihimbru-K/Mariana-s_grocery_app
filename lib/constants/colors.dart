@@ -12,13 +12,15 @@ const Color dblue = Color(0xFF0F1C3F);
 const Color Blue = Color(0xFF5F52EE);
 const Color green = Color(0xFF60D889);
 const Color dgreen = Color(0xFF006400);
-const Color black = Color(0xFF3A3A3A);
 const Color dgrey = Color(0xFF767970);
 const Color yellowish = Color(0xFFDEDC52);
 const Color reddish = Color(0xFFCE3A54);
 const Color grey = Color(0xFFDCDCDC);
 Color mediumGrey = Color(0xFF808080);
 const Color bgcolor = Color(0xFFEEEFF5);
+const Color orange = Color(0xFFE67F1E);
+const Color purpleColor = Color(0xFF7A1E76);
+const Color black = Color(0xFF000000);
 
 
 const Color lightYellow = Color(0xFFFdc54B);

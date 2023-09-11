@@ -66,23 +66,23 @@ class _CreateAccountState extends State<CreateAccount> {
                 ),
                 //  SizedBox(height: 20),
 
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       _firstNameController.text,
 
-                      style: TextStyle(fontSize: 16, color: Colors.purple),
+                      style: const TextStyle(fontSize: 16, color: purple),
                     ),
                     Text(
                       _lastNameController.text,
-                      style: TextStyle(fontSize: 16, color: Colors.purple),
+                      style: const TextStyle(fontSize: 16, color: purple),
                     ),
                   ],
                 ),
 
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
                 Container(
                   width: MediaQuery.of(context).size.width * 0.7,
@@ -116,7 +116,7 @@ class _CreateAccountState extends State<CreateAccount> {
             ),),
           actions: [
             TextButton(
-              child: Text('Close'),
+              child: const Text('Close'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -145,7 +145,7 @@ class _CreateAccountState extends State<CreateAccount> {
           // Background Image
           Positioned.fill(
             child: Image.asset(
-              'assets/images/4onboarding2.png',
+              'assets/images/onboarding4.png',
               fit: BoxFit.cover,
             ),
           ),
@@ -196,23 +196,30 @@ class _CreateAccountState extends State<CreateAccount> {
                       width: textFieldWidth,
                       child: TextField(
                         decoration: InputDecoration(
-
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            borderSide: const BorderSide(color: orange),
+                          ),
                           labelText: 'first name',
                         ),
                       ),
                     ),
-                    SizedBox(width: 20.0),
+                    const SizedBox(width: 20.0),
                     SizedBox(
                       width: textFieldWidth,
                       child: TextField(
                         decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            borderSide: const BorderSide(color: orange),
+                          ),
                           labelText: 'last name',
                         ),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
 
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
@@ -221,20 +228,20 @@ class _CreateAccountState extends State<CreateAccount> {
                       hintText: 'Email',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                        borderSide: BorderSide(color: black),
+                        borderSide: BorderSide(color: orange),
                       ),
                     ),
                     controller: TextEditingController(text: 'rafatul3588@gmail.com'),
                   ),
                 ),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                   child: TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                        borderSide: BorderSide(color: black),
+                        borderSide: BorderSide(color: orange),
                       ),
                       hintText: 'Password',
                       suffixIcon: IconButton(
@@ -255,7 +262,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     ),
                   ),
                 ),
-                Center(child: Text("terms and condition"),),
+                const Center(child: Text("terms and condition"),),
                 SizedBox(height: screenHeight*0.05),
                 Container(
                   width: screenWidth * 0.4,

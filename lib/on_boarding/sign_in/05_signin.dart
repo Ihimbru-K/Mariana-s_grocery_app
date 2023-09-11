@@ -28,7 +28,7 @@ class _SignInState extends State<SignIn> {
           // Background Image
           Positioned.fill(
             child: Image.asset(
-              'assets/images/4onboarding3.png',
+              'assets/images/onboarding5.png',
               fit: BoxFit.cover,
             ),
           ),
