@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
         leading: Row(
           //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [ Column(children: const [ SizedBox(height: 5,),
-            Text("Good morning", style: TextStyle(fontSize: 13, color: dgrey),), SizedBox(height: 1,), Text("$name", style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),),
+            Text("Good morning", style: TextStyle(fontSize: 13, color: dgrey),), SizedBox(height: 1,), Text("$name", style: TextStyle(fontSize: 16, color: black, fontWeight: FontWeight.bold),),
           ],),
 
 
@@ -102,7 +102,7 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Text("Categories", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), Icon(Icons.arrow_forward, color: Colors.black,)
+                Text("Categories", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), Icon(Icons.arrow_forward, color: black,)
               ],),
             SizedBox(height:  screenHeight*0.03,),
             SingleChildScrollView(
@@ -303,7 +303,7 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Text("Trending Deals", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), Icon(Icons.arrow_forward, color: Colors.black,)
+                Text("Trending Deals", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), Icon(Icons.arrow_forward, color: black,)
               ],),
             SizedBox(width: screenWidth*0.019,),
 
@@ -422,7 +422,7 @@ class _HomeState extends State<Home> {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  backgroundColor: black,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30)),
                 ),

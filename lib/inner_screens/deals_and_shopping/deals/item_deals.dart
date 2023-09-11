@@ -101,7 +101,7 @@ class _ItemsDealsState extends State<ItemsDeals> {
                             color: lightYellow,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "-",
                               style: TextStyle(
@@ -112,7 +112,7 @@ class _ItemsDealsState extends State<ItemsDeals> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                       Text(
                         "$counter",
                         style: TextStyle(fontSize: 24),
@@ -131,7 +131,7 @@ class _ItemsDealsState extends State<ItemsDeals> {
                             color: lightYellow,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "+",
                               style: TextStyle(
@@ -176,7 +176,7 @@ class _ItemsDealsState extends State<ItemsDeals> {
                             border: Border(
                               bottom: BorderSide(
                                 color: index == selectedHeadingIndex
-                                    ? Colors.black
+                                    ? black
                                     : Colors.transparent,
                                 width: 2,
                               ),
@@ -219,7 +219,7 @@ class DescriptionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: const [
         Text(
           'Description',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),

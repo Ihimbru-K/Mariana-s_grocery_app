@@ -12,8 +12,8 @@ class CreateAccount extends StatefulWidget {
 }
 
 class _CreateAccountState extends State<CreateAccount> {
-  TextEditingController _firstNameController = TextEditingController();
-  TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
   bool _passwordVisible = false;
 
 
@@ -52,12 +52,12 @@ class _CreateAccountState extends State<CreateAccount> {
                           height: 300,
                           width: MediaQuery.of(context).size.width*0.4,
                         ),
-                        Text(
+                        const Text(
                           'Congratulations!',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 30,
-                            color: Colors.orange,
+                            color: orange,
                           ),
                         ),
                       ],
