@@ -32,14 +32,14 @@ class CartScreen extends StatelessWidget {
           return ListTile(
             leading: Image.asset(
               item.fruit.image,
-              width: 50,
-              height: 50,
+              width: 60,
+              height: 100,
             ),
             title: Text(item.fruit.name),
-            trailing: Text('Quantity: ${item.quantity}'),
             subtitle: Text(
-              'Total: \$${totalPrice.toStringAsFixed(2)}',
+              'Unit Price: \$${item.fruit.unitPrice.toStringAsFixed(2)}\nTotal: \$${totalPrice.toStringAsFixed(2)}',
             ),
+            trailing: Text('Quantity: ${item.quantity}'),
           );
         },
       ),
