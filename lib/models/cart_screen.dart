@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'fruits_class.dart';
+import 'cart_class.dart';
+
 class CartScreen extends StatelessWidget {
   final Cart cart;
 
@@ -35,11 +36,10 @@ class CartScreen extends StatelessWidget {
               height: 50,
             ),
             title: Text(item.fruit.name),
+            trailing: Text('Quantity: ${item.quantity}'),
             subtitle: Text(
-              'Price: \$${item.fruit.unitPrice.toStringAsFixed(2)} ' +
-                  'Quantity: ${item.quantity}',
+              'Total: \$${totalPrice.toStringAsFixed(2)}',
             ),
-            trailing: Text('Total: \$${totalPrice.toStringAsFixed(2)}'),
           );
         },
       ),

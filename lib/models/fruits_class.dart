@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
+import 'cart_class.dart';
 import 'cart_screen.dart';
+import 'package:grocery_app/models/cart_class.dart';
 
 class Fruit {
   final String name;
@@ -24,35 +26,7 @@ class CartItem {
   CartItem({required this.fruit, this.quantity = 1});
 }
 
-class Cart {
-  List<CartItem> selectedItems = [];
 
-  void addToCart(Fruit fruit) {
-    final existingItem = selectedItems.firstWhere(
-          (item) => item.fruit.name == fruit.name,
-      orElse: () => CartItem(fruit: fruit),
-    );
-
-    if (existingItem.quantity >= 1) {
-      existingItem.quantity++;
-    } else {
-      selectedItems.add(existingItem);
-    }
-  }
-
-  void removeFromCart(Fruit fruit) {
-    final existingItem = selectedItems.firstWhere(
-          (item) => item.fruit.name == fruit.name,
-      orElse: () => CartItem(fruit: fruit),
-    );
-
-    if (existingItem.quantity > 1) {
-      existingItem.quantity--;
-    } else {
-      selectedItems.remove(existingItem);
-    }
-  }
-}
 class FruitSelectionScreen extends StatefulWidget {
   @override
   _FruitSelectionScreenState createState() => _FruitSelectionScreenState();
