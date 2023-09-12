@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/on_boarding/sign_in/05_signin.dart';
 
 import '../../constants/colors.dart';
-import '../../inner_screens/home/06_home.dart';
+
 
 class CreateAccount extends StatefulWidget {
   @override
@@ -151,11 +151,18 @@ class _CreateAccountState extends State<CreateAccount> {
           ),
           // Content Widget
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.65 - MediaQuery.of(context).size.height * 0.25,
-            left: MediaQuery.of(context).size.width * 0.02,
-            right: MediaQuery.of(context).size.width * 0.02,
+            top: MediaQuery.of(context).size.height * 0.65 - MediaQuery.of(context).size.height * 0.22,
+            left: MediaQuery.of(context).size.width * 0.001,
+            right: MediaQuery.of(context).size.width * 0.001,
+            child: Container(
 
-            child: Column(
+             decoration: const BoxDecoration(
+               color: Colors.white,
+               borderRadius: BorderRadius.vertical(
+                 top: Radius.circular(30.0), // Round the top corners
+               ),
+             ),
+              child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Row(
@@ -289,8 +296,9 @@ class _CreateAccountState extends State<CreateAccount> {
                     ),
                   ),
                 ),
+                SizedBox(height: screenHeight*0.05),
               ],
-            ),
+            ),),
 
           ),
         ],

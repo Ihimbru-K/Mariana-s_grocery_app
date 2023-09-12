@@ -22,7 +22,12 @@ class _SignInState extends State<SignIn> {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back),),),
+     // backgroundColor: Colors.transparent,
+      //appBar: AppBar(
+      //  backgroundColor: Colors.transparent,
+
+
+      //  leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back),),),
       body: Stack(
         children: [
           // Background Image
@@ -34,11 +39,19 @@ class _SignInState extends State<SignIn> {
           ),
           // Content Widget
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.75 - MediaQuery.of(context).size.height * 0.25,
-            left: MediaQuery.of(context).size.width * 0.02,
-            right: MediaQuery.of(context).size.width * 0.02,
+            top: MediaQuery.of(context).size.height * 0.65 - MediaQuery.of(context).size.height * 0.21,
+            left: MediaQuery.of(context).size.width * 0.001,
+            right: MediaQuery.of(context).size.width * 0.001,
 
-              child: Column(
+              child: Container(
+
+                decoration: const BoxDecoration(
+                  color: white,
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(30.0), // Round the top corners
+                  ),
+                ),
+                child:Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Row(
@@ -57,21 +70,22 @@ class _SignInState extends State<SignIn> {
                       Padding(
                         padding: EdgeInsets.all(screenWidth * 0.04),
                         child: CircleAvatar(
-                          radius: screenWidth * 0.049,
-                          backgroundColor: black,
-                          child: Center(child: IconButton(
-                            icon: Icon(
-                              Icons.close,
-                              color: white,
-                            ),
-                            onPressed: () {
-                              // Handle close button action
-                            },
-                          ),)
+                            radius: screenWidth * 0.049,
+                            backgroundColor: black,
+                            child: Center(child: IconButton(
+                              icon: const Icon(
+                                Icons.close,
+                                color: white,
+                              ),
+                              onPressed: () {
+                                // Handle close button action
+                              },
+                            ),)
                         ),
                       ),
                     ],
                   ),
+                  SizedBox(height: screenHeight*0.03,),
 
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
@@ -143,8 +157,10 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                   ),
+                  SizedBox(height: screenWidth * 0.032),
+                  Container(height: screenHeight*0.1,)
                 ],
-              ),
+              ),)
 
           ),
         ],

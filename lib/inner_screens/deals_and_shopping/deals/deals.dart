@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/widgets/root_screen.dart';
+import 'package:grocery_app/inner_screens/deals_and_shopping/deals/item_deals.dart';
 import '../../../constants/colors.dart';
 
 class Deals extends StatefulWidget {
@@ -10,6 +10,7 @@ class Deals extends StatefulWidget {
 }
 
 class _DealsState extends State<Deals> {
+  int selectedCategoryIndex = -1;
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -19,7 +20,7 @@ class _DealsState extends State<Deals> {
         backgroundColor: lightYellow,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color:white),
-          onPressed: () {},
+          onPressed: () {Navigator.pop(context);},
         ),
         actions: [
           IconButton(
@@ -95,6 +96,34 @@ class _DealsState extends State<Deals> {
 
                         ),),
                       SizedBox(height: screenWidth*0.03,),
+
+                      GestureDetector(onTap: (){
+                        setState(() {
+                          selectedCategoryIndex = 0;
+                        });
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemsDeals()),);
+                      },child: Container( width: screenWidth * 0.41,
+                          height: screenHeight*0.33,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  //spreadRadius: 2,
+                                  // blurRadius: 5,
+                                  // offset: const Offset(0, 3),
+                                ),
+                              ]),
+
+                        child: Expanded(
+
+                          child:  Image.asset("assets/images/orange.png", scale: 3.5, fit: BoxFit.fill, ),),
+
+
+                        ),
+                      ),
+                      SizedBox(height: screenWidth*0.03),
                       Container( width: screenWidth * 0.41,
                         height: screenHeight*0.33,
                         decoration: BoxDecoration(
@@ -103,9 +132,7 @@ class _DealsState extends State<Deals> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
-                                //spreadRadius: 2,
-                                // blurRadius: 5,
-                                // offset: const Offset(0, 3),
+
                               ),
                             ]),
                         child: Expanded(
@@ -187,30 +214,6 @@ class _DealsState extends State<Deals> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
-                                //spreadRadius: 2,
-                                // blurRadius: 5,
-                                // offset: const Offset(0, 3),
-                              ),
-                            ]),
-                        child: Expanded(
-
-                          child:  Image.asset("assets/images/grapes.png", scale: 3.5, fit: BoxFit.fill, ),
-
-
-                        ),
-                      ),
-                      SizedBox(height: screenWidth*0.03),
-                      Container( width: screenWidth * 0.41,
-                        height: screenHeight*0.33,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                //spreadRadius: 2,
-                                // blurRadius: 5,
-                                // offset: const Offset(0, 3),
                               ),
                             ]),
                         child: Expanded(
@@ -341,9 +344,7 @@ class _DealsState extends State<Deals> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              //spreadRadius: 2,
-                              // blurRadius: 5,
-                              // offset: const Offset(0, 3),
+
                             ),
                           ]),
                       child: Expanded(

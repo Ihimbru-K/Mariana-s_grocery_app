@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "dd9c63a8-bb47-4219-9ef0-004a73ae589a",
+		"name": "flutter-dev-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7347387"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phone\": \"251912121212\",\n    \"password\": \"12345678\",\n    \"country\": \"ETH\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://stagingapi.chipchip.social/v1/users/login",
+					"protocol": "https",
+					"host": [
+						"stagingapi",
+						"chipchip",
+						"social"
+					],
+					"path": [
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stagingapi.chipchip.social/v1/users",
+					"protocol": "https",
+					"host": [
+						"stagingapi",
+						"chipchip",
+						"social"
+					],
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stagingapi.chipchip.social/v1/products",
+					"protocol": "https",
+					"host": [
+						"stagingapi",
+						"chipchip",
+						"social"
+					],
+					"path": [
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product-detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stagingapi.chipchip.social/v1/products/8aec9daf-034d-43ff-874a-cedebea910b3",
+					"protocol": "https",
+					"host": [
+						"stagingapi",
+						"chipchip",
+						"social"
+					],
+					"path": [
+						"v1",
+						"products",
+						"8aec9daf-034d-43ff-874a-cedebea910b3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stagingapi.chipchip.social/v1/categories",
+					"protocol": "https",
+					"host": [
+						"stagingapi",
+						"chipchip",
+						"social"
+					],
+					"path": [
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

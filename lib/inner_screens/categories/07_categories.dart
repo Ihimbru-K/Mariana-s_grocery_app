@@ -22,8 +22,8 @@ class _CategoriesState extends State<Categories> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: white,
-        leading: const Icon(Icons.arrow_back,color: Colors.black,),
-      title: const Text("Categories", style: TextStyle(color: Colors.black),),
+        leading: const Icon(Icons.arrow_back,color: black,),
+      title: const Text("Categories", style: TextStyle(color: black),),
         centerTitle: true,
         elevation: 0,
       ),
@@ -39,7 +39,6 @@ class _CategoriesState extends State<Categories> {
                Navigator.push(context, MaterialPageRoute(builder: (context)=>Deals()),);
              },
              child:  Container(
-               //padding: EdgeInsets.all(3),
                width: screenWidth * 0.315,
                height: screenWidth*0.315,
                decoration: BoxDecoration(
@@ -233,6 +232,7 @@ class _CategoriesState extends State<Categories> {
         ],),
 
       ),
+
     );
   }
 }

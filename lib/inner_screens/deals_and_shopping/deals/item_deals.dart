@@ -62,101 +62,110 @@ class _ItemsDealsState extends State<ItemsDeals> {
           ),
           // Content Widget
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.75 -
-                MediaQuery.of(context).size.height * 0.25,
-            left: MediaQuery.of(context).size.width * 0.02,
-            right: MediaQuery.of(context).size.width * 0.02,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            top: MediaQuery.of(context).size.height * 0.45 -
+                MediaQuery.of(context).size.height * 0.2,
+            left: MediaQuery.of(context).size.width * 0.001,
+            right: MediaQuery.of(context).size.width * 0.001,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: white,
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(30.0), // Round the top corners
+                ),
+              ),
+              child: Column(
+             // crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Column(children: [Text("Fruits", style: TextStyle(fontSize: screenWidth*0.04,  fontWeight: FontWeight.bold),), Padding(
-                  padding: EdgeInsets.all(screenWidth * 0.04),
-                  child: Text(
-                    'Fresh Orange',
-                    style: TextStyle(
-                      fontSize: screenWidth * 0.05,
-                      fontWeight: FontWeight.bold,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [Text("Fruits", style: TextStyle(fontSize: screenWidth*0.04,  fontWeight: FontWeight.bold),), Padding(
+                    padding: EdgeInsets.all(screenWidth * 0.04),
+                    child: Text(
+                      'Fresh Orange',
+                      style: TextStyle(
+                        fontSize: screenWidth * 0.05,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("$price", style: TextStyle(color: lightYellow, fontSize: screenWidth*0.04),),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            if (counter > 0) {
-                              counter--;
-                            }
-                          });
-                        },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: lightYellow,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "-",
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("$price", style: TextStyle(color: lightYellow, fontSize: 25),),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  if (counter > 0) {
+                                    counter--;
+                                  }
+                                });
+                              },
+                              child: Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: lightYellow,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    "-",
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      Text(
-                        "$counter",
-                        style: TextStyle(fontSize: 24),
-                      ),
-                      SizedBox(width: 16),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            counter++;
-                          });
-                        },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: lightYellow,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "+",
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
+                            const SizedBox(width: 16),
+                            Text(
+                              "$counter",
+                              style: TextStyle(fontSize: 24),
+                            ),
+                            SizedBox(width: 16),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  counter++;
+                                });
+                              },
+                              child: Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: lightYellow,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    "+",
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
-                ],),
-                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(children: [
-                        const Icon(Icons.star, color: lightYellow,),
-                        Text("$rating", style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 23),),SizedBox(width:4,),
-                        Text("($reviews reviews,)", style: const TextStyle(color: dgrey),)
-                      ], ), Row(children: [Image.asset("assets/images/people.png")],)
+                      ],),
+                    Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(children: [
+                          const Icon(Icons.star, color: lightYellow,),
+                          Text("$rating", style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 23),),SizedBox(width:4,),
+                          Text("($reviews reviews,)", style: const TextStyle(color: dgrey),)
+                        ], ), Row(children: [Image.asset("assets/images/people.png", height: 100, width: 100,)],)
+                      ],),
+
+
+
                   ],),
-
-
-
-                ],),
                 Container(
                   height: 40,
                   child: ListView.builder(
@@ -171,7 +180,7 @@ class _ItemsDealsState extends State<ItemsDeals> {
                           });
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
                           decoration: BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
@@ -196,13 +205,22 @@ class _ItemsDealsState extends State<ItemsDeals> {
                     },
                   ),
                 ),
-                Expanded(
-                  child: selectedHeadingIndex == 0
-                      ? DescriptionPage()
-                      : Container(),
-                ),
+                // Expanded(
+                // child: selectedHeadingIndex == 0
+                // ? DescriptionPage()
+                // : Container(),
+                // ),
+                Center(child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',"),),
+             Container(height: screenHeight*0.2, child:  Row(children: [
+
+    GestureDetector(onTap: (){} , child:Image.asset("assets/images/heart.png", height: 75, width: 150,)) ,SizedBox(width: screenWidth*0.07,), GestureDetector(onTap: (){} , child:Image.asset("assets/images/buttonc.png", height: 100, width: 200,)  ,),
+
+             ],),)
+
+
               ],
-            ),
+            ),)
+
           ),
         ],
       ),

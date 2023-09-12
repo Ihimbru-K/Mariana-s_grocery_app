@@ -101,8 +101,8 @@ class _HomeState extends State<Home> {
             SizedBox(height:  screenHeight*0.03,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text("Categories", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), Icon(Icons.arrow_forward, color: black,)
+              children:  [
+                const Text("Categories", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), IconButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Categories()));}, icon: Icon(Icons.arrow_forward, color: black,))
               ],),
             SizedBox(height:  screenHeight*0.03,),
             SingleChildScrollView(
@@ -302,8 +302,8 @@ class _HomeState extends State<Home> {
             SizedBox(height:  screenHeight*0.03,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text("Trending Deals", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), Icon(Icons.arrow_forward, color: black,)
+              children:  [
+                Text("Trending Deals", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),), IconButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Deals()));}, icon: Icon(Icons.arrow_forward, color: black,))
               ],),
             SizedBox(width: screenWidth*0.019,),
 
@@ -436,7 +436,9 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-            )
+            ),
+
+
 
 
 
@@ -449,7 +451,7 @@ class _HomeState extends State<Home> {
           ],
         ),),),
 
-        //bottomNavigationBar: RootScreen(),
+       // bottomNavigationBar: RootScreen(),
 
     );
   }

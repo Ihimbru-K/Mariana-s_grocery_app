@@ -119,7 +119,7 @@ class _OnBoarding3State extends State<OnBoarding3> {
                     "LOGIN",
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.black,
+                      color: black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

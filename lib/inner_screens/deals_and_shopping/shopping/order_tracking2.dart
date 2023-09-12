@@ -20,15 +20,15 @@ class _OrderTrackingState extends State<OrderTracking> {
     return Scaffold(
       appBar: AppBar(
         leading: const CircleAvatar(
-          backgroundColor: Colors.orange,
+          backgroundColor: orange,
           child: Icon(
             Icons.close,
-            color: Colors.black,
+            color: black,
           ),
         ),
         title: const Text(
           "Order Tracking",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(color: black, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
@@ -38,9 +38,9 @@ class _OrderTrackingState extends State<OrderTracking> {
             Image.asset("assets/images/bike.png"),
             SliderTheme(
               data: SliderThemeData(
-                thumbColor: Colors.orange,
-                activeTrackColor: Colors.orange,
-                inactiveTrackColor: Colors.grey,
+                thumbColor: orange,
+                activeTrackColor: orange,
+                inactiveTrackColor: dgrey,
                 overlayColor: Colors.orange.withOpacity(0.2),
               ),
               child: Column(
@@ -72,7 +72,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                           "Submit Review",
                           style: TextStyle(
                               fontSize: 16,
-                              color:  Colors.black,
+                              color:  black,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
