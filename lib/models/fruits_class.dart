@@ -1,6 +1,10 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
+import '../inner_screens/deals_and_shopping/shopping/write_reviews.dart';
+import '../inner_screens/others/discussions.dart';
 import 'cart_class.dart';
 import 'cart_screen.dart';
 import 'package:grocery_app/models/cart_class.dart';
@@ -30,6 +34,36 @@ class CartItem {
 class FruitSelectionScreen extends StatefulWidget {
   @override
   _FruitSelectionScreenState createState() => _FruitSelectionScreenState();
+  void navigateToPage(int index) {
+    if (index == 0) {
+      // Do nothing if the "Description" heading is tapped
+      return;
+    }
+
+    Widget page;
+    if (index == 1) {
+      page = WriteReviews();
+    } else if (index == 2) {
+      page = Discussions();
+    } else {
+      return;
+    }
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => page),
+    );
+  }
+  final List<Heading> headings = [
+    Heading('Description'),
+    Heading('Reviews'),
+    Heading('Discussions'),
+  ];
+  int selectedHeadingIndex = 0;
+  int counter = 0;
+  double price = 4.9;
+  double rating = 4.5;
+  double reviews = 128;
 }
 
 class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
@@ -48,9 +82,7 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
     final double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Fruit Selection'),
-      ),
+        appBar: AppBar(leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: const Icon(Icons.arrow_back),),),
       body: Stack(children: [
         // Background Image
         Positioned.fill(
@@ -240,6 +272,57 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
                   ),
                 ],
               ),
+              Container(
+                height: 40,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: headings.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedHeadingIndex = index;
+                          navigateToPage(index);
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(
+                              color: index == selectedHeadingIndex
+                                  ? black
+                                  : Colors.transparent,
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                        child: Text(
+                          headings[index].title,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: index == selectedHeadingIndex
+                                ? FontWeight.bold
+                                : FontWeight.normal,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // Expanded(
+              // child: selectedHeadingIndex == 0
+              // ? DescriptionPage()
+              // : Container(),
+              // ),
+              Center(child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',"),),
+              Container(height: screenHeight*0.2, child:  Row(children: [
+
+                GestureDetector(onTap: (){} , child:Image.asset("assets/images/heart.png", height: 75, width: 150,)) ,SizedBox(width: screenWidth*0.07,), GestureDetector(onTap: (){} , child:Image.asset("assets/images/buttonc.png", height: 100, width: 200,)  ,),
+
+              ],),),
+
               ElevatedButton(
                 onPressed: () {
                   final fruit = Fruit(
@@ -262,6 +345,35 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
           ),),)
 
       ],)
+    );
+  }
+}
+class Heading {
+  final String title;
+
+  Heading(this.title);
+}
+
+class DescriptionPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        Text(
+          'Description',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(height: 16),
+        Expanded(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(16),
+            child: Text(
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
