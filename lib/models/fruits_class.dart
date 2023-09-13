@@ -70,14 +70,6 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
   double rating = 4.5;
   double reviews = 128;
 
-  // class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
-
-  //int counter = 0;
-  //int selectedHeadingIndex = 0;
-  //double price = 4.9;
-  //double rating = 4.5;
-  //double reviews = 128;
-
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -102,11 +94,12 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
               ),
             ),
             Positioned(
-              top: MediaQuery.of(context).size.height * 0.45 -
+              top: MediaQuery.of(context).size.height * 0.3 -
                   MediaQuery.of(context).size.height * 0.2,
               left: MediaQuery.of(context).size.width * 0.001,
               right: MediaQuery.of(context).size.width * 0.001,
               child: Container(
+                padding: EdgeInsets.all(screenWidth*0.05),
                 decoration: const BoxDecoration(
                   color: white,
                   borderRadius: BorderRadius.vertical(
@@ -115,28 +108,32 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
                 ),
                 child: Column(
                   children: [
-                    Column(
-                      // crossAxisAlignment: CrossAxisAlignment.start,
+                    SizedBox(height: screenHeight*0.00,),
+                    Row(children: [
+
+                      //SizedBox(width: screenWidth*0.04,),
+                      Column(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+
                       children: [
                         Text(
                           "Fruits",
                           style: TextStyle(
-                              fontSize: screenWidth * 0.04,
+                              fontSize: screenWidth * 0.05,
                               fontWeight: FontWeight.bold),
                         ),
-                        Padding(
-                          padding: EdgeInsets.all(screenWidth * 0.04),
-                          child: Text(
+
+                         Text(
                             'Fresh Orange',
                             style: TextStyle(
-                              fontSize: screenWidth * 0.05,
+                              fontSize: screenWidth * 0.06,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
+
                       ],
-                    ),
+                    ),],),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -242,78 +239,17 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
                       ],
                     ),
 
-                    ListTile(
+                    //ListTile(
                       // leading: Image.asset(
                       // 'assets/images/orange.png',
                       //width: 50,
                       //height: 50,
                       // ),
 
-                      title: Text('Banana'),
-                      subtitle: Text('Category: Fruits'),
-                      trailing: Text('Price: \$7.00'),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              if (counter > 0) {
-                                counter--;
-                              }
-                            });
-                          },
-                          child: Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "-",
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        Text(
-                          "$counter",
-                          style: TextStyle(fontSize: 24),
-                        ),
-                        SizedBox(width: 16),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              counter++;
-                            });
-                          },
-                          child: Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "+",
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                     // title: Text('Banana'),
+                     // subtitle: Text('Category: Fruits'),
+                      //trailing: Text('Price: \$7.00'),
+                    //),
                     Container(
                       height: 40,
                       child: ListView.builder(
@@ -378,7 +314,22 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
                             width: screenWidth * 0.07,
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              final fruit = Fruit(
+                                  name: 'Orange',
+                                  category: 'Fruits',
+                                  unitPrice: 7.0,
+                                  image: 'assets/images/orange.png',
+                              );
+                              cart.addToCart(fruit);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                  builder: (context) => CartScreen(cart: cart),
+                              )
+                              );
+
+                            },
                             child: Image.asset(
                               "assets/images/buttonc.png",
                               height: 100,
@@ -389,24 +340,24 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
                       ),
                     ),
 
-                    ElevatedButton(
-                      onPressed: () {
-                        final fruit = Fruit(
-                          name: 'Orange',
-                          category: 'Fruits',
-                          unitPrice: 7.0,
-                          image: 'assets/images/orange.png',
-                        );
-                        cart.addToCart(fruit);
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => CartScreen(cart: cart),
-                          ),
-                        );
-                      },
-                      child: Text('Add to Cart'),
-                    ),
+                    // ElevatedButton(
+                    //   onPressed: () {
+                    //     final fruit = Fruit(
+                    //       name: 'Orange',
+                    //       category: 'Fruits',
+                    //       unitPrice: 7.0,
+                    //       image: 'assets/images/orange.png',
+                    //     );
+                    //     cart.addToCart(fruit);
+                    //     Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //         builder: (context) => CartScreen(cart: cart),
+                    //       ),
+                    //     );
+                    //   },
+                    //   child: Text('Add to Cart'),
+                    // ),
                   ],
                 ),
               ),
