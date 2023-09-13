@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../constants/colors.dart';
 import 'cart_class.dart';
 
 class CartScreen extends StatelessWidget {
@@ -20,8 +21,26 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: white,
       appBar: AppBar(
-        title: Text('Cart'),
+        elevation: 1,
+        backgroundColor: white,
+        automaticallyImplyLeading: false,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //Text('Your Title'),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Item details', style: TextStyle(color: black, fontSize: 20),),
+                Text('Place order', style: TextStyle(color: orange),),
+              ],
+            ),
+          ],
+        ),
+
       ),
       body: ListView.builder(
         itemCount: cart.selectedItems.length,
