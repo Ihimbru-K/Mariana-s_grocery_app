@@ -9,6 +9,7 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  TextEditingController _emailController = TextEditingController();
   bool _passwordVisible = false;
 
   void _togglePasswordVisibility() {
@@ -91,13 +92,13 @@ class _SignInState extends State<SignIn> {
                     padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                     child: TextField(
                       decoration: const InputDecoration(
-                        hintText: 'Email',
+                        hintText: 'rafatul3588@gmail.com',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           borderSide: BorderSide(color: black),
                         ),
                       ),
-                      controller: TextEditingController(text: 'rafatul3588@gmail.com'),
+                      controller: _emailController,
                     ),
                   ),
                   SizedBox(height: 16.0),

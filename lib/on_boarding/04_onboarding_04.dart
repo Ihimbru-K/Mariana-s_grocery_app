@@ -14,6 +14,7 @@ class CreateAccount extends StatefulWidget {
 class _CreateAccountState extends State<CreateAccount> {
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
   bool _passwordVisible = false;
 
 
@@ -232,13 +233,13 @@ class _CreateAccountState extends State<CreateAccount> {
                   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                   child: TextField(
                     decoration: const InputDecoration(
-                      hintText: 'Email',
+                      hintText: 'rafatul3588@gmail.com',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                         borderSide: BorderSide(color: orange),
                       ),
                     ),
-                    controller: TextEditingController(text: 'rafatul3588@gmail.com'),
+                    controller: _emailController,
                   ),
                 ),
                 const SizedBox(height: 16.0),
