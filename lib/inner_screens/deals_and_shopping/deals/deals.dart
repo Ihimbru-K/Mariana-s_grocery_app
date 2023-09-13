@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/inner_screens/deals_and_shopping/deals/item_deals.dart';
 import '../../../constants/colors.dart';
+import '../../../models/fruits_class.dart';
 
 class Deals extends StatefulWidget {
   const Deals({Key? key}) : super(key: key);
@@ -101,7 +102,7 @@ class _DealsState extends State<Deals> {
                         setState(() {
                           selectedCategoryIndex = 0;
                         });
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemsDeals()),);
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>FruitSelection()),);
                       },child: Container( width: screenWidth * 0.41,
                           height: screenHeight*0.33,
                           decoration: BoxDecoration(

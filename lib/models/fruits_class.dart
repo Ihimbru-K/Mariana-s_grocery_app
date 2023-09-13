@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 import '../inner_screens/deals_and_shopping/shopping/write_reviews.dart';
 import '../inner_screens/others/discussions.dart';
-import 'cart_class.dart';
 import 'cart_screen.dart';
 import 'package:grocery_app/models/cart_class.dart';
 
@@ -30,12 +29,12 @@ class CartItem {
   CartItem({required this.fruit, this.quantity = 1});
 }
 
-class FruitSelectionScreen extends StatefulWidget {
+class FruitSelection extends StatefulWidget {
 //  @override
-  _FruitSelectionScreenState createState() => _FruitSelectionScreenState();
+  _FruitSelectionState createState() => _FruitSelectionState();
 }
 
-class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
+class _FruitSelectionState extends State<FruitSelection> {
   final Cart cart = Cart();
 
   void navigateToPage(int index) {
@@ -54,7 +53,7 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
     }
 
     Navigator.push(
-      context as BuildContext,
+      context,
       MaterialPageRoute(builder: (context) => page),
     );
   }
@@ -66,7 +65,7 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
   ];
   int selectedHeadingIndex = 0;
   int counter = 0;
-  double price = 4.9;
+  double myPrice = 7;
   double rating = 4.5;
   double reviews = 128;
 
@@ -94,7 +93,7 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
               ),
             ),
             Positioned(
-              top: MediaQuery.of(context).size.height * 0.3 -
+              top: MediaQuery.of(context).size.height * 0.45 -
                   MediaQuery.of(context).size.height * 0.2,
               left: MediaQuery.of(context).size.width * 0.001,
               right: MediaQuery.of(context).size.width * 0.001,
@@ -138,7 +137,7 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "$price",
+                          "\$${myPrice.toStringAsFixed(2)}",
                           style: TextStyle(color: lightYellow, fontSize: 25),
                         ),
                         Row(
@@ -307,8 +306,8 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
                               onTap: () {},
                               child: Image.asset(
                                 "assets/images/heart.png",
-                                height: 75,
-                                width: 150,
+                                height: 100,
+                                width: 100,
                               )),
                           SizedBox(
                             width: screenWidth * 0.07,
@@ -333,7 +332,7 @@ class _FruitSelectionScreenState extends State<FruitSelectionScreen> {
                             child: Image.asset(
                               "assets/images/buttonc.png",
                               height: 100,
-                              width: 200,
+                              width: 225,
                             ),
                           ),
                         ],

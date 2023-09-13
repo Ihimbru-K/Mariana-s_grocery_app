@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
       ),
 
 
-     home: FruitSelectionScreen(),
-     // home: const Onboarding0()
+    // home: FruitSelection(),
+      home: const Onboarding0()
       //home: Rev(),
       //home: SignIn(),
     );
