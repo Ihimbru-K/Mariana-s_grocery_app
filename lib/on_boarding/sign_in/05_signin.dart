@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/services/auth_service.dart';
 
 import '../../constants/colors.dart';
 import '../../inner_screens/home/06_home.dart';
@@ -10,9 +11,41 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
   bool _passwordVisible = false;
   final GlobalKey<FormState> _formKey = GlobalKey();
   //Map<String,String> authData ={'email':'', 'password':''};
+
+  void _loginUser() async {
+    final String email = _emailController.text;
+    final String password = _passwordController.text;
+
+    try {
+      final authService = AuthService();
+      final accessToken = await authService.loginUser(email, password);
+
+      // Store the access token securely and navigate to the home screen
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Home()),
+      );
+    } catch (error) {
+      // Display the error message to the user (e.g., using a toast or dialog)
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Login Failed'),
+          content: Text(error.toString()),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('OK'),
+            ),
+          ],
+        ),
+      );
+    }
+  }
 
   void _togglePasswordVisibility() {
     setState(() {
@@ -137,6 +170,7 @@ class _SignInState extends State<SignIn> {
                     height: screenWidth * 0.15,
                     child: ElevatedButton(
                       onPressed: () {
+                        _loginUser();
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Home()),
