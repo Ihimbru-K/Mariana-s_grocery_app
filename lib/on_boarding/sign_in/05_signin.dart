@@ -11,6 +11,8 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   TextEditingController _emailController = TextEditingController();
   bool _passwordVisible = false;
+  final GlobalKey<FormState> _formKey = GlobalKey();
+  Map<String,String> authData ={'email':'', 'password':''};
 
   void _togglePasswordVisibility() {
     setState(() {
